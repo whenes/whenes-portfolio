@@ -1,0 +1,497 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Whenes Oliveira · Software Engineer | Full Stack</title>
+  <meta name="description" content="Software Engineer with 10+ years building, modernizing and maintaining enterprise applications with Java, Spring Boot, Node.js, NestJS, Angular and React.">
+  <meta property="og:type" content="profile">
+  <meta property="og:title" content="Whenes Oliveira · Software Engineer | Full Stack">
+  <meta property="og:description" content="10+ years building, modernizing and maintaining enterprise applications.">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:locale:alternate" content="pt_BR">
+  <link rel="alternate" hreflang="pt-BR" href="https://whenes.github.io/github-pages-resume/">
+  <link rel="alternate" hreflang="en" href="https://whenes.github.io/github-pages-resume/en/">
+  <link rel="alternate" hreflang="x-default" href="https://whenes.github.io/github-pages-resume/">
+  <script>
+    (function () {
+      var theme;
+      try { theme = localStorage.getItem('theme'); } catch (e) {}
+      if (!theme) theme = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', theme);
+    })();
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Unbounded:wght@500;600;700&display=swap">
+  <link rel="stylesheet" href="../assets/css/tokens.css">
+  <link rel="stylesheet" href="../assets/css/base.css">
+  <link rel="stylesheet" href="../assets/css/components.css">
+  <script src="../assets/js/i18n.js" defer></script>
+  <script src="../assets/js/components.js" defer></script>
+  <script src="../assets/js/timeline.js" defer></script>
+</head>
+<body>
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <symbol id="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></symbol>
+      <symbol id="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></symbol>
+      <symbol id="i-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="8" width="14" height="14" rx="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></symbol>
+      <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></symbol>
+      <symbol id="i-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></symbol>
+      <symbol id="i-download" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></symbol>
+      <symbol id="i-external" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></symbol>
+      <symbol id="i-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 5-5.5 10.2-7.4 11.8a1 1 0 0 1-1.2 0C9.5 20.2 4 15 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></symbol>
+      <symbol id="i-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></symbol>
+      <symbol id="i-repo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/></symbol>
+      <symbol id="i-tag" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12.6 2.6A2 2 0 0 0 11.2 2H4a2 2 0 0 0-2 2v7.2a2 2 0 0 0 .6 1.4l8.7 8.7a2.4 2.4 0 0 0 3.4 0l6.6-6.6a2.4 2.4 0 0 0 0-3.4Z"/><circle cx="7.5" cy="7.5" r="1"/></symbol>
+      <symbol id="i-lock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></symbol>
+      <symbol id="i-github" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1.1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17 4.9 18 5.2 18 5.2c.7 1.7.3 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3"/></symbol>
+      <symbol id="i-linkedin" viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.850 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13Zm1.78 13.02H3.56V9h3.56v11.45ZM22.23 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0h.01Z"/></symbol>
+    </defs>
+  </svg>
+
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="app-topbar">
+    <a class="app-topbar-brand" href="#top">
+      <span class="app-topbar-mark" aria-hidden="true">WO</span>
+      Whenes Oliveira
+    </a>
+    <nav aria-label="Sections">
+      <ul class="app-topbar-nav">
+        <li><a href="#career">Career</a></li>
+        <li><a href="#case">Case</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="app-topbar-actions">
+      <nav class="lang-switch" aria-label="Language">
+        <a href="index.html" hreflang="en" lang="en" aria-label="English" aria-current="true">EN</a>
+        <a href="../index.html" hreflang="pt-BR" lang="pt-BR" aria-label="Português (Brasil)">PT</a>
+      </nav>
+      <a class="btn btn-ghost btn-icon app-topbar-social" href="https://github.com/whenes" aria-label="GitHub profile"><svg class="icon" aria-hidden="true"><use href="#i-github"/></svg></a>
+      <a class="btn btn-ghost btn-icon app-topbar-social" href="https://www.linkedin.com/in/whenes-oliveira-b9baa7189" aria-label="LinkedIn profile"><svg class="icon" aria-hidden="true"><use href="#i-linkedin"/></svg></a>
+      <button class="btn btn-ghost btn-icon theme-toggle" type="button" data-theme-toggle aria-label="Switch theme">
+        <svg class="icon icon-moon" aria-hidden="true"><use href="#i-moon"/></svg>
+        <svg class="icon icon-sun" aria-hidden="true"><use href="#i-sun"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <main class="page" id="main">
+
+    <header class="profile" id="top">
+      <div class="profile-avatar" aria-hidden="true">WO</div>
+      <div>
+        <h1 class="profile-name">Whenes Oliveira</h1>
+        <p class="profile-role">Software Engineer<span class="profile-role-sep" aria-hidden="true">|</span>Full Stack</p>
+        <ul class="profile-meta">
+          <li><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg>Tubarão, SC, Brazil</li>
+          <li><span class="status-dot" aria-hidden="true"></span>Software Consultant at SUPERO</li>
+        </ul>
+        <p class="profile-summary"><strong>10+ years</strong> building, modernizing and maintaining enterprise applications, backend to mobile.</p>
+        <div class="profile-actions">
+          <a class="btn btn-primary" href="mailto:whenes.oliveira@gmail.com"><svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg>Email me</a>
+          <a class="btn btn-secondary" aria-disabled="true" title="Resume PDF not published yet"><svg class="icon" aria-hidden="true"><use href="#i-download"/></svg>Resume PDF</a>
+          <span class="profile-actions-divider" aria-hidden="true"></span>
+          <a class="btn btn-ghost btn-icon" href="https://github.com/whenes" aria-label="GitHub profile"><svg class="icon" aria-hidden="true"><use href="#i-github"/></svg></a>
+          <a class="btn btn-ghost btn-icon" href="https://www.linkedin.com/in/whenes-oliveira-b9baa7189" aria-label="LinkedIn profile"><svg class="icon" aria-hidden="true"><use href="#i-linkedin"/></svg></a>
+          <button class="btn btn-ghost btn-icon" type="button" data-copy="whenes.oliveira@gmail.com" data-copy-message="Email copied" aria-label="Copy email address"><svg class="icon" aria-hidden="true"><use href="#i-copy"/></svg></button>
+        </div>
+      </div>
+    </header>
+
+    <!-- ============ Career ============ -->
+    <section class="page-section" id="career" aria-labelledby="career-title">
+      <header class="section-heading">
+        <h2 class="section-heading-title" id="career-title">Career</h2>
+        <span class="section-heading-note">10 roles since 2010 · 4 client placements via SUPERO since 2020</span>
+      </header>
+
+      <div class="timeline" id="career-timeline" data-timeline-for="career-log" data-timeline-selected="totvs"></div>
+
+      <ol class="gitlog" id="career-log">
+        <li class="commit" id="log-supero" data-branch="tip" data-kind="branch" data-lane="b" data-start="2020-11" data-end="" data-slug="supero" data-label="SUPERO">
+          <span class="commit-graph" aria-hidden="true"><i class="lane lane-a"></i><i class="lane lane-b"></i><i class="node node-head" data-lane="b"></i></span>
+          <div class="commit-body">
+            <div class="commit-head">
+              <h3 class="commit-title"><span class="commit-org">SUPERO</span> <span class="commit-role">Software Consultant</span></h3>
+              <span class="commit-refs"><span class="ref ref-head">HEAD</span><span class="ref ref-branch">consulting</span></span>
+              <span class="commit-date">Nov 2020 → Present</span>
+            </div>
+            <p class="commit-subject">Software consulting across enterprise projects and clients: backend, frontend, mobile, system integrations, legacy modernization, troubleshooting and maintenance.</p>
+          </div>
+        </li>
+
+        <li class="commit" id="log-totvs" data-lane="b" data-start="2023-09" data-end="2026-08" data-slug="totvs" data-label="TOTVS">
+          <span class="commit-graph" aria-hidden="true"><i class="lane lane-a"></i><i class="lane lane-b"></i><i class="node" data-lane="b"></i></span>
+          <div class="commit-body">
+            <div class="commit-head">
+              <h3 class="commit-title"><span class="commit-org">TOTVS</span> <span class="commit-role">Software Consultant</span></h3>
+              <span class="commit-date">Sep 2023 → Aug 2026</span>
+            </div>
+            <p class="commit-subject">Enterprise customer portal for employees of TOTVS customers: user and organization management, ticket workflows, new features and incremental migration of legacy functionality.</p>
+            <details class="commit-details">
+              <summary><svg class="icon" aria-hidden="true"><use href="#i-chevron"/></svg><span class="commit-details-label-closed">Show 8 changes</span><span class="commit-details-label-open">Hide changes</span></summary>
+              <ul class="commit-points">
+                <li>Contributed to the gradual modernization of a system where legacy Java EE, EJB and Node.js applications coexisted with newer Spring Boot and NestJS services.</li>
+                <li>Implemented and maintained feature-flag-based migration flows so new implementations were validated before switching users to the new backend.</li>
+                <li>Built REST APIs and integrations with Fluig, Zendesk and TOTVS Centralized Base.</li>
+                <li>Applied the Adapter Pattern, Dependency Inversion and Dependency Injection to reduce coupling and make automated testing easier.</li>
+                <li>Created custom annotations that encapsulate Swagger configuration in NestJS, keeping controllers clean.</li>
+                <li>Unit tests with JUnit and Jest against a 60% minimum coverage target, updated whenever behavior changed.</li>
+                <li>Apache Kafka, including message keys where event ordering had to be preserved.</li>
+                <li>AI-assisted workflow with Spec Kit, Claude and GitHub Copilot: reviewing, validating, correcting and testing generated code.</li>
+              </ul>
+              <ul class="tech-list">
+                <li class="tech">Java</li><li class="tech">Spring Boot</li><li class="tech">Node.js</li><li class="tech">NestJS</li><li class="tech">Angular</li><li class="tech">TypeScript</li><li class="tech">Apache Kafka</li><li class="tech">JUnit</li><li class="tech">Jest</li>
+              </ul>
+            </details>
+          </div>
+        </li>
+
+        <li class="commit" id="log-selbetti" data-lane="b" data-start="2022-07" data-end="2023-08" data-slug="selbetti" data-label="Selbetti">
+          <span class="commit-graph" aria-hidden="true"><i class="lane lane-a"></i><i class="lane lane-b"></i><i class="node" data-lane="b"></i></span>
+          <div class="commit-body">
+            <div class="commit-head">
+              <h3 class="commit-title"><span class="commit-org">Selbetti</span> <span class="commit-role">Software Consultant</span></h3>
+              <span class="commit-date">Jul 2022 → Aug 2023</span>
+            </div>
+            <p class="commit-subject">Technical support, mobile and embedded application teams: reproduction, debugging and root-cause analysis on complex issues.</p>
+            <details class="commit-details">
+              <summary><svg class="icon" aria-hidden="true"><use href="#i-chevron"/></svg><span class="commit-details-label-closed">Show 5 changes</span><span class="commit-details-label-open">Hide changes</span></summary>
+              <ul class="commit-points">
+                <li>Fixed an issue involving the Caixa Econômica Federal bank slip check-digit algorithm by analyzing the full processing flow, finding the incorrect implementation and validating it against the official documentation.</li>
+                <li>Built a native Android app in Kotlin with an end-to-end printer-list flow through a Java and Spring Boot API.</li>
+                <li>Rebuilt a Ricoh printer frontend in HTML, CSS2, legacy JavaScript, jQuery and AJAX when the Angular solution could not run in the printer's environment.</li>
+                <li>Led the technical execution of a Java 8 → Java 9 migration, delivering the application working on the target version.</li>
+                <li>Took part in technical decisions adapting the solution to hardware constraints and delivery deadlines.</li>
+              </ul>
+              <ul class="tech-list">
+                <li class="tech">Java</li><li class="tech">Spring Boot</li><li class="tech">Java EE</li><li class="tech">Kotlin</li><li class="tech">Android</li><li class="tech">Angular</li><li class="tech">React</li><li class="tech">Flutter</li><li class="tech">C#</li><li class="tech">jQuery</li>
+              </ul>
+            </details>
+          </div>
+        </li>
+
+        <li class="commit" id="log-portonave" data-lane="b" data-start="2021-10" data-end="2022-06" data-slug="portonave" data-label="Portonave">
+          <span class="commit-graph" aria-hidden="true"><i class="lane lane-a"></i><i class="lane lane-b"></i><i class="node" data-lane="b"></i></span>
+          <div class="commit-body">
+            <div class="commit-head">
+              <h3 class="commit-title"><span class="commit-org">Portonave</span> <span class="commit-role">Software Consultant</span></h3>
+              <span class="commit-date">Oct 2021 → Jun 2022</span>
+            </div>
+            <p class="commit-subject">Software supporting port operations across desktop, web, mobile and integrated systems.</p>
+            <details class="commit-details">
+              <summary><svg class="icon" aria-hidden="true"><use href="#i-chevron"/></svg><span class="commit-details-label-closed">Show 4 changes</span><span class="commit-details-label-open">Hide changes</span></summary>
+              <ul class="commit-points">
+                <li>REST APIs in Java and Spring Boot; desktop applications in Eclipse RCP, SWT and Swing.</li>
+                <li>Native Android apps in Java and web interfaces in React, integrated with APIs, services and databases.</li>
+                <li>State persistence that let interrupted multi-step processes resume from the exact step where they stopped.</li>
+                <li>Investigated numerical precision and value representation issues in application flows.</li>
+              </ul>
+              <ul class="tech-list">
+                <li class="tech">Java</li><li class="tech">Spring Boot</li><li class="tech">Eclipse RCP</li><li class="tech">SWT</li><li class="tech">Android</li><li class="tech">React</li>
+              </ul>
+            </details>
+          </div>
+        </li>
+
+        <li class="commit" id="log-philips" data-branch="start" data-lane="b" data-start="2020-11" data-end="2021-10" data-slug="philips" data-label="Philips">
+          <span class="commit-graph" aria-hidden="true"><i class="lane lane-a"></i><i class="lane lane-b"></i><i class="branch-curve"></i><i class="node" data-lane="b"></i></span>
+          <div class="commit-body">
+            <div class="commit-head">
+              <h3 class="commit-title"><span class="commit-org">Philips</span> <span class="commit-role">Software Consultant</span></h3>
+              <span class="commit-date">Nov 2020 → Oct 2021</span>
+            </div>
+            <p class="commit-subject">Tasy healthcare management system: new functionality and maintenance of existing modules.</p>
+            <details class="commit-details">
+              <summary><svg class="icon" aria-hidden="true"><use href="#i-chevron"/></svg><span class="commit-details-label-closed">Show 6 changes</span><span class="commit-details-label-open">Hide changes</span></summary>
+              <ul class="commit-points">
+                <li>Extensive Oracle PL/SQL: procedures, functions, views, triggers and complex queries, with business rules implemented in the database per the product architecture.</li>
+                <li>Participated in developing a hospital accreditation workflow for hospitals serving Unimed customers.</li>
+                <li>Developed assigned PL/SQL functionality end to end, from understanding the business flow through implementation, debugging, testing and integration with consuming applications.</li>
+                <li>Technical reference for code quality, helping developers apply SRP, Fail Fast, SOLID and duplication removal.</li>
+                <li>Investigated bugs by reproducing user flows, analyzing logs and debugging application and database execution.</li>
+                <li>Worked across multiple product versions: branches, merge conflicts and pull requests for each applicable version.</li>
+              </ul>
+              <ul class="tech-list">
+                <li class="tech">Java</li><li class="tech">Node.js</li><li class="tech">Angular</li><li class="tech">TypeScript</li><li class="tech">Oracle</li><li class="tech">PL/SQL</li><li class="tech">Jenkins</li>
+              </ul>
+            </details>
+          </div>
+        </li>
+
+        <li class="commit" id="log-postoaki" data-lane="a" data-start="2019-10" data-end="2021-01" data-slug="postoaki" data-label="PostoAki">
+          <span class="commit-graph" aria-hidden="true"><i class="lane lane-a"></i><i class="node" data-lane="a"></i></span>
+          <div class="commit-body">
+            <div class="commit-head">
+              <h3 class="commit-title"><span class="commit-org">PostoAki</span> <span class="commit-role">Software Developer</span></h3>
+              <span class="commit-date">Oct 2019 → Jan 2021</span>
+            </div>
+            <p class="commit-subject">Customer loyalty platform for gas station networks: discount coupons, point-of-sale integrations, web and mobile apps.</p>
+            <details class="commit-details">
+              <summary><svg class="icon" aria-hidden="true"><use href="#i-chevron"/></svg><span class="commit-details-label-closed">Show 6 changes</span><span class="commit-details-label-open">Hide changes</span></summary>
+              <ul class="commit-points">
+                <li>Delivered features end to end across frontend, backend, database and integrations, including third-party APIs and Linx systems.</li>
+                <li>White-label, multitenant application serving different gas station networks.</li>
+                <li>Shell scripts automating per-client customization: texts, links, settings, icons, images and visual identity.</li>
+                <li>Automated preparation, configuration, build and publishing of the Android and iOS apps.</li>
+                <li>UX decisions such as surfacing the discount coupon on app open and easier navigation through long station lists.</li>
+                <li>Trained a junior developer on the team's activities and processes.</li>
+              </ul>
+              <ul class="tech-list">
+                <li class="tech">Java</li><li class="tech">Spring Boot</li><li class="tech">Angular</li><li class="tech">Ionic</li><li class="tech">Shell</li>
+              </ul>
+            </details>
+          </div>
+        </li>
+
+        <li class="commit" id="log-ateky" data-lane="a" data-start="2018-06" data-end="2018-08" data-slug="ateky" data-label="Ateky">
+          <span class="commit-graph" aria-hidden="true"><i class="lane lane-a"></i><i class="node" data-lane="a"></i></span>
+          <div class="commit-body">
+            <div class="commit-head">
+              <h3 class="commit-title"><span class="commit-org">Ateky</span> <span class="commit-role">Technical Support</span></h3>
+              <span class="commit-date">Jun 2018 → Aug 2018</span>
+            </div>
+            <p class="commit-subject">Remote support for internet service provider customers, diagnosing slow or unstable connections from network configuration, signal information and routes.</p>
+          </div>
+        </li>
+
+        <li class="commit" id="log-senai" data-lane="a" data-start="2015-03" data-end="2015-11" data-slug="senai" data-label="SENAI">
+          <span class="commit-graph" aria-hidden="true"><i class="lane lane-a"></i><i class="node" data-lane="a"></i></span>
+          <div class="commit-body">
+            <div class="commit-head">
+              <h3 class="commit-title"><span class="commit-org">SENAI</span> <span class="commit-role">Software Developer</span></h3>
+              <span class="commit-date">Mar 2015 → Nov 2015</span>
+            </div>
+            <p class="commit-subject">Web-based school management system used by SENAI units.</p>
+            <details class="commit-details">
+              <summary><svg class="icon" aria-hidden="true"><use href="#i-chevron"/></svg><span class="commit-details-label-closed">Show 3 changes</span><span class="commit-details-label-open">Hide changes</span></summary>
+              <ul class="commit-points">
+                <li>Features in Java Web, Java EE, JSF, JSP, RichFaces and Hibernate; custom reports in SQL and PostgreSQL.</li>
+                <li>Investigated issues through log analysis and debugging, and corrected data inconsistencies so school processes were not blocked.</li>
+                <li>JUnit tests for new functionality, updated whenever business rules changed.</li>
+              </ul>
+              <ul class="tech-list">
+                <li class="tech">Java EE</li><li class="tech">JSF</li><li class="tech">JSP</li><li class="tech">RichFaces</li><li class="tech">Hibernate</li><li class="tech">PostgreSQL</li><li class="tech">JUnit</li>
+              </ul>
+            </details>
+          </div>
+        </li>
+
+        <li class="commit" id="log-evoluma" data-lane="a" data-start="2013-07" data-end="2013-12" data-slug="evoluma" data-label="Evoluma">
+          <span class="commit-graph" aria-hidden="true"><i class="lane lane-a"></i><i class="node" data-lane="a"></i></span>
+          <div class="commit-body">
+            <div class="commit-head">
+              <h3 class="commit-title"><span class="commit-org">Evoluma</span> <span class="commit-role">Software Developer Intern</span></h3>
+              <span class="commit-date">Jul 2013 → Dec 2013</span>
+            </div>
+            <p class="commit-subject">PHP vehicle tracking application: registration features, reports, PostgreSQL queries, bug fixes and a PDF user manual.</p>
+          </div>
+        </li>
+
+        <li class="commit" id="log-unisul-projects" data-lane="a" data-start="2011-03" data-end="2011-12" data-slug="unisul-projects" data-label="UNISUL Projects Lab">
+          <span class="commit-graph" aria-hidden="true"><i class="lane lane-a"></i><i class="node" data-lane="a"></i></span>
+          <div class="commit-body">
+            <div class="commit-head">
+              <h3 class="commit-title"><span class="commit-org">IT Projects Lab, UNISUL</span> <span class="commit-role">Software Development Intern</span></h3>
+              <span class="commit-date">Mar 2011 → Dec 2011</span>
+            </div>
+            <p class="commit-subject">Desktop app for medication inventory and appointment scheduling, delivered to Abrigo dos Velhinhos de Tubarão and, per the supervising professor, still in use about five years later.</p>
+            <details class="commit-details">
+              <summary><svg class="icon" aria-hidden="true"><use href="#i-chevron"/></svg><span class="commit-details-label-closed">Show 3 changes</span><span class="commit-details-label-open">Hide changes</span></summary>
+              <ul class="commit-points">
+                <li>Database access through JDBC with hand-written SQL, in an MVC structure.</li>
+                <li>Singleton-based guard preventing multiple application instances from opening at once.</li>
+                <li>Visual indicators for low medication stock and overdue appointments; took part in installation and delivery at the institution.</li>
+              </ul>
+              <ul class="tech-list">
+                <li class="tech">Java 6</li><li class="tech">SWT</li><li class="tech">GWT</li><li class="tech">JDBC</li><li class="tech">MySQL</li>
+              </ul>
+            </details>
+          </div>
+        </li>
+
+        <li class="commit" id="log-unisul-library" data-root data-lane="a" data-start="2010-03" data-end="2010-12" data-slug="unisul-library" data-label="UNISUL Library Lab">
+          <span class="commit-graph" aria-hidden="true"><i class="lane lane-a"></i><i class="node" data-lane="a"></i></span>
+          <div class="commit-body">
+            <div class="commit-head">
+              <h3 class="commit-title"><span class="commit-org">Library Lab, UNISUL</span> <span class="commit-role">IT Support Intern</span></h3>
+              <span class="commit-refs"><span class="ref">root</span></span>
+              <span class="commit-date">Mar 2010 → Dec 2010</span>
+            </div>
+            <p class="commit-subject">Support for a computer lab of about 15 workstations: Wi-Fi connectivity, IP addressing, driver and hardware issues.</p>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <!-- ============ Case ============ -->
+    <section class="page-section" id="case" aria-labelledby="case-title">
+      <header class="section-heading">
+        <h2 class="section-heading-title" id="case-title">Modernizing without stopping</h2>
+        <span class="section-heading-note">TOTVS · 2023 – 2026</span>
+      </header>
+      <p class="page-lede">On the TOTVS customer portal, legacy Java EE, EJB and Node.js applications coexisted with newer Spring Boot and NestJS services while functionality was migrated incrementally. New implementations sat behind feature flags and were validated before users were switched to the new backend. Flip the flag to follow a request, or <a href="#log-totvs">open the TOTVS commit</a> on the career graph.</p>
+      <article class="card flag-case" data-flag-case>
+        <header class="flag-case-header">
+          <div>
+            <h3 class="flag-case-title">Customer portal modernization</h3>
+            <p class="flag-case-org">TOTVS · via SUPERO · 2023 – 2026</p>
+          </div>
+          <button class="flag-switch" type="button" role="switch" aria-checked="false" aria-label="Feature flag portal.users.modern-backend">
+            <span class="flag-switch-track" aria-hidden="true"></span>
+            <span class="flag-switch-text">
+              <span class="flag-switch-key">portal.users.modern-backend</span>
+              <span class="flag-switch-state" data-flag-state="off">off · legacy backend</span>
+              <span class="flag-switch-state" data-flag-state="on" hidden>on · modern backend</span>
+            </span>
+          </button>
+        </header>
+        <div class="flag-path">
+          <div class="flag-node is-active">
+            <span class="flag-node-name">Customer portal <span class="ref">client</span></span>
+            <ul class="tech-list"><li class="tech">Angular</li><li class="tech">TypeScript</li></ul>
+          </div>
+          <svg class="flag-edges" viewBox="0 0 72 100" preserveAspectRatio="none" aria-hidden="true">
+            <path class="flag-edge" data-flag-target="legacy" d="M0 50 C 40 50, 32 25, 72 25" vector-effect="non-scaling-stroke"/>
+            <path class="flag-edge" data-flag-target="modern" d="M0 50 C 40 50, 32 75, 72 75" vector-effect="non-scaling-stroke"/>
+          </svg>
+          <div class="flag-targets">
+            <div class="flag-node" data-flag-target="legacy">
+              <span class="flag-node-name">Legacy services <span class="ref">flag off</span></span>
+              <ul class="tech-list"><li class="tech">Java EE</li><li class="tech">EJB</li><li class="tech">Node.js</li></ul>
+            </div>
+            <div class="flag-node" data-flag-target="modern">
+              <span class="flag-node-name">Modern services <span class="ref ref-branch">flag on</span></span>
+              <ul class="tech-list"><li class="tech">Spring Boot</li><li class="tech">NestJS</li></ul>
+            </div>
+          </div>
+        </div>
+        <footer class="flag-case-footer">
+          <div aria-live="polite">
+            <p class="flag-status" data-flag-state="off"><strong>Legacy path.</strong> Requests go to the Java EE / EJB services users already depend on.</p>
+            <p class="flag-status" data-flag-state="on" hidden><strong>Modern path.</strong> The new Spring Boot / NestJS implementation serves users under the flag, validated before the full switch.</p>
+          </div>
+          <ul class="flag-integrations">
+            <li>Integrations</li>
+            <li class="tech">Fluig</li><li class="tech">Zendesk</li><li class="tech">TOTVS Centralized Base</li><li class="tech">Apache Kafka</li>
+          </ul>
+          <p class="flag-note">Flag key and diagram are illustrative; the migration pattern is from the engagement.</p>
+        </footer>
+      </article>
+    </section>
+
+    <!-- ============ Projects ============ -->
+    <section class="page-section" id="projects" aria-labelledby="projects-title">
+      <header class="section-heading">
+        <h2 class="section-heading-title" id="projects-title">Projects</h2>
+        <a class="section-heading-note" href="https://github.com/whenes?tab=repositories">All public repositories on GitHub</a>
+      </header>
+      <div class="repo-grid">
+        <article class="card repo-card repo-card-featured">
+          <div class="repo-head">
+            <svg class="icon" aria-hidden="true"><use href="#i-repo"/></svg>
+            <h3 class="repo-name"><a href="https://github.com/whenes/placar-basquete-releases"><span class="repo-owner">whenes/</span>placar-basquete-releases</a></h3>
+            <span class="badge badge-neutral"><svg class="icon" aria-hidden="true" style="width:12px;height:12px"><use href="#i-lock"/></svg>Source private</span>
+          </div>
+          <p class="repo-desc">Placar Basquete, a FIBA electronic basketball scoreboard for Windows. Every <span class="mono">vX.Y.Z</span> tag builds in GitHub Actions and publishes the installer to a public releases repository, keeping the five most recent versions.</p>
+          <ul class="repo-meta">
+            <li><svg class="icon" aria-hidden="true"><use href="#i-tag"/></svg>v0.1.0</li>
+            <li>Released Sep 15, 2026</li>
+            <li><a href="https://github.com/whenes/placar-basquete-releases/releases/latest">Download installer</a><svg class="icon" aria-hidden="true" style="width:12px;height:12px"><use href="#i-external"/></svg></li>
+          </ul>
+        </article>
+        <article class="card repo-card">
+          <div class="repo-head">
+            <svg class="icon" aria-hidden="true"><use href="#i-repo"/></svg>
+            <h3 class="repo-name"><a href="https://github.com/whenes/arquitetura-hexagonal-fc3"><span class="repo-owner">whenes/</span>arquitetura-hexagonal-fc3</a></h3>
+          </div>
+          <p class="repo-desc">Hexagonal architecture studies from the Full Cycle course.</p>
+          <ul class="repo-meta"><li><span class="lang-dot" style="--lang:#00add8" aria-hidden="true"></span>Go</li></ul>
+        </article>
+        <article class="card repo-card">
+          <div class="repo-head">
+            <svg class="icon" aria-hidden="true"><use href="#i-repo"/></svg>
+            <h3 class="repo-name"><a href="https://github.com/whenes/arquitetura-monolito-fc3"><span class="repo-owner">whenes/</span>arquitetura-monolito-fc3</a></h3>
+          </div>
+          <p class="repo-desc">Modular monolith architecture exercises from the Full Cycle course.</p>
+          <ul class="repo-meta"><li><span class="lang-dot" style="--lang:#3178c6" aria-hidden="true"></span>TypeScript</li></ul>
+        </article>
+        <article class="card repo-card">
+          <div class="repo-head">
+            <svg class="icon" aria-hidden="true"><use href="#i-repo"/></svg>
+            <h3 class="repo-name"><a href="https://github.com/whenes/alura-ddd"><span class="repo-owner">whenes/</span>alura-ddd</a></h3>
+          </div>
+          <p class="repo-desc">Domain-Driven Design course exercises from Alura.</p>
+          <ul class="repo-meta"><li><span class="lang-dot" style="--lang:#b07219" aria-hidden="true"></span>Java</li></ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============ Skills ============ -->
+    <section class="page-section" id="skills" aria-labelledby="skills-title">
+      <header class="section-heading">
+        <h2 class="section-heading-title" id="skills-title">Skills</h2>
+        <span class="section-heading-note">As listed on the résumé</span>
+      </header>
+      <dl class="skill-matrix">
+        <div class="skill-row"><dt>Backend</dt><dd><ul class="tech-list"><li class="tech">Java</li><li class="tech">Spring Boot</li><li class="tech">Java EE</li><li class="tech">Node.js</li><li class="tech">NestJS</li><li class="tech">TypeScript</li><li class="tech">REST APIs</li><li class="tech">JPA</li><li class="tech">Hibernate</li><li class="tech">EJB</li></ul></dd></div>
+        <div class="skill-row"><dt>Frontend</dt><dd><ul class="tech-list"><li class="tech">Angular</li><li class="tech">React</li><li class="tech">JavaScript</li><li class="tech">HTML5</li><li class="tech">CSS3</li><li class="tech">Ionic</li><li class="tech">JSF</li></ul></dd></div>
+        <div class="skill-row"><dt>Engineering</dt><dd><ul class="tech-list"><li class="tech">MVC</li><li class="tech">Layered Architecture</li><li class="tech">OOP</li><li class="tech">Clean Code</li><li class="tech">SOLID</li><li class="tech">Design Patterns</li><li class="tech">Adapter Pattern</li><li class="tech">Dependency Inversion</li><li class="tech">Dependency Injection</li></ul></dd></div>
+        <div class="skill-row"><dt>Testing</dt><dd><ul class="tech-list"><li class="tech">JUnit</li><li class="tech">Jest</li><li class="tech">Mocha/Chai</li><li class="tech">Vitest</li><li class="tech">Cypress</li><li class="tech">Playwright</li><li class="tech">Supertest</li><li class="tech">Unit testing</li><li class="tech">Integration testing</li></ul></dd></div>
+        <div class="skill-row"><dt>Databases</dt><dd><ul class="tech-list"><li class="tech">Oracle</li><li class="tech">PostgreSQL</li><li class="tech">SQL Server</li><li class="tech">SQL</li><li class="tech">PL/SQL</li></ul></dd></div>
+        <div class="skill-row"><dt>Integrations</dt><dd><ul class="tech-list"><li class="tech">REST</li><li class="tech">RabbitMQ</li><li class="tech">Apache Kafka</li></ul></dd></div>
+        <div class="skill-row"><dt>Tools</dt><dd><ul class="tech-list"><li class="tech">Git</li><li class="tech">GitHub</li><li class="tech">Azure DevOps</li><li class="tech">Jenkins</li><li class="tech">Jira</li></ul></dd></div>
+        <div class="skill-row"><dt>Agile</dt><dd><ul class="tech-list"><li class="tech">Scrum</li><li class="tech">Kanban</li><li class="tech">XP</li></ul></dd></div>
+        <div class="skill-row"><dt>AI-assisted</dt><dd><ul class="tech-list"><li class="tech">Spec Kit</li><li class="tech">Claude</li><li class="tech">GitHub Copilot</li></ul></dd></div>
+      </dl>
+    </section>
+
+    <!-- ============ Education ============ -->
+    <section class="page-section" id="education" aria-labelledby="education-title">
+      <header class="section-heading">
+        <h2 class="section-heading-title" id="education-title">Education</h2>
+      </header>
+      <div class="entry">
+        <h3 class="entry-title">Universidade do Sul de Santa Catarina · UNISUL</h3>
+        <span class="badge badge-neutral">Incomplete</span>
+        <p class="entry-sub">Computer Science</p>
+      </div>
+    </section>
+
+    <!-- ============ Contact ============ -->
+    <section class="page-section" id="contact" aria-labelledby="contact-title">
+      <aside class="contact">
+        <div>
+          <h2 class="contact-title" id="contact-title">Have a system that can't stop while it changes?</h2>
+          <p class="contact-text">Gradual modernization with legacy and new services side by side, feature-flag migration flows, and the technical execution of a Java 8 → 9 migration. Pick the channel you prefer.</p>
+          <p class="contact-email">
+            <span id="contact-address">whenes.oliveira@gmail.com</span>
+            <button class="btn btn-on-accent-ghost btn-icon btn-sm" type="button" data-copy-from="#contact-address" data-copy-message="Email copied" aria-label="Copy email address"><svg class="icon" aria-hidden="true"><use href="#i-copy"/></svg></button>
+          </p>
+        </div>
+        <div class="contact-actions">
+          <a class="btn btn-on-accent btn-lg" href="mailto:whenes.oliveira@gmail.com"><svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg>Email me</a>
+          <a class="btn btn-on-accent-outline btn-lg" href="https://www.linkedin.com/in/whenes-oliveira-b9baa7189"><svg class="icon" aria-hidden="true"><use href="#i-linkedin"/></svg>LinkedIn</a>
+          <a class="btn btn-on-accent-outline btn-lg" href="https://github.com/whenes"><svg class="icon" aria-hidden="true"><use href="#i-github"/></svg>GitHub</a>
+          <a class="btn btn-on-accent-outline btn-lg" aria-disabled="true" title="Resume PDF not published yet"><svg class="icon" aria-hidden="true"><use href="#i-download"/></svg>Resume</a>
+        </div>
+      </aside>
+
+      <footer class="site-footer">
+        <span>© 2026 Whenes Oliveira · Built on the Steply design system</span>
+        <nav aria-label="Elsewhere">
+          <a href="https://github.com/whenes">GitHub</a>
+          <a href="https://www.linkedin.com/in/whenes-oliveira-b9baa7189">LinkedIn</a>
+          <a href="../components.html">Dev components</a>
+        </nav>
+      </footer>
+    </section>
+  </main>
+</body>
+</html>

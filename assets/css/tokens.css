@@ -1,0 +1,252 @@
+/*
+  Tokens — Steply design system, portfolio edition.
+  Token names and scales follow D:/steply/steply-sdd-harness-arch/STYLE_GUIDE.md.
+  Additions for the portfolio are grouped under "Portfolio" headings.
+  Dark is the default; [data-theme='light'] overrides colors only.
+*/
+
+:root {
+  color-scheme: dark;
+
+  /* Backgrounds */
+  --bg-app: #1e1f22;
+  --bg-base: #2b2d31;
+  --bg-surface: #313338;
+  --bg-surface-2: #35373c;
+  --bg-surface-3: #3f4147;
+  --bg-floating: #111214;
+  --bg-overlay: rgba(0, 0, 0, 0.45);
+  --bg-sidebar: #232428;
+  --bg-hover: #3a3c42;
+  --bg-active: #404249;
+  --bg-disabled: #2a2c31;
+
+  /* Text */
+  --font-primary: #f2f3f5;
+  --font-secondary: #dbdee1;
+  --font-tertiary: #b5bac1;
+  --font-muted: #a3a9b2;
+  --font-faint: #868b93;
+  --font-disabled: #6d6f78;
+  --font-inverse: #060607;
+  --font-link: #3cb9ff;
+  --font-positive: #4fd18b;
+  --font-warning: #f5c35b;
+  --font-danger: #ff7b7e;
+
+  /* Brand / Accent */
+  --accent-primary: #5865f2;
+  --accent-primary-hover: #4752c4;
+  --accent-primary-active: #3c45a5;
+  --accent-secondary: #949cf7;
+  --accent-link: #00a8fc;
+  --accent-success: #23a55a;
+  --accent-warning: #f0b232;
+  --accent-danger: #f23f43;
+
+  /* Portfolio: soft fills for badges, callouts, refs */
+  --accent-primary-soft: rgba(88, 101, 242, 0.2);
+  --accent-success-soft: rgba(35, 165, 90, 0.16);
+  --accent-warning-soft: rgba(240, 178, 50, 0.14);
+  --accent-danger-soft: rgba(242, 63, 67, 0.16);
+
+  /* Portfolio: committed accent field (same in both themes; white text ≥ 5:1) */
+  --accent-fill: #4f5bd5;
+  --on-accent: #ffffff;
+  --on-accent-muted: rgba(255, 255, 255, 0.86);
+  --on-accent-line: rgba(255, 255, 255, 0.5);
+  --on-accent-hover: rgba(255, 255, 255, 0.14);
+  --on-accent-button-text: #2f3794;
+
+  /* Borders */
+  --border-subtle: #1a1b1e;
+  --border-default: #3a3c42;
+  --border-strong: #4e5058;
+  --border-bright: #6d6f78;
+  --border-focus: #949cf7;
+
+  /* Buttons */
+  --button-primary-bg: #5865f2;
+  --button-primary-bg-hover: #4752c4;
+  --button-primary-text: #ffffff;
+  --button-secondary-bg: #4e5058;
+  --button-secondary-bg-hover: #6d6f78;
+  --button-secondary-text: #ffffff;
+  --button-ghost-bg: transparent;
+  --button-ghost-bg-hover: #3a3c42;
+  --button-ghost-text: #dbdee1;
+
+  /* Portfolio: career graph lanes */
+  --graph-main: #6d6f78;
+  --graph-branch: #5865f2;
+  --graph-node-bg: #2b2d31;
+
+  /* Portfolio: code */
+  --code-bg: #1e1f22;
+  --code-text: #dbdee1;
+  --code-comment: #8b919a;
+  --code-keyword: #b3a4ff;
+  --code-string: #7ee0a3;
+  --code-function: #6cc4ff;
+  --code-decorator: #f5c35b;
+  --code-punct: #a3a9b2;
+
+  /* Shadows */
+  --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.16);
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.24);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.24);
+  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.32);
+
+  /* Scrollbar / selection */
+  --scrollbar-thumb: rgba(255, 255, 255, 0.15);
+  --scrollbar-thumb-hover: rgba(255, 255, 255, 0.25);
+  --selection-bg: rgba(88, 101, 242, 0.45);
+
+  /* Typography */
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-display: 'Unbounded', 'Inter', -apple-system, 'Segoe UI', sans-serif;
+  --font-mono: 'JetBrains Mono', 'Cascadia Code', ui-monospace, 'SF Mono', Menlo, monospace;
+
+  --text-xs: 12px;
+  --text-sm: 14px;
+  --text-md: 16px;
+  --text-lg: 20px;
+  --text-xl: 24px;
+  --text-xxl: 32px;
+  /* Portfolio: display sizes, fluid */
+  --text-display: clamp(30px, 22px + 2.6vw, 48px);
+  --text-display-sm: clamp(22px, 18px + 1vw, 28px);
+
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --line-height-tight: 1.2;
+  --line-height-normal: 1.45;
+  --line-height-relaxed: 1.6;
+  --letter-spacing-tight: -0.02em;
+  --letter-spacing-normal: 0;
+  --letter-spacing-wide: 0.02em;
+
+  /* Spacing — 4px scale */
+  --space-0: 0;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-7: 28px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+
+  /* Radius */
+  --radius-xs: 3px;
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 8px;
+  --radius-xl: 12px;
+  --radius-2xl: 16px;
+  --radius-pill: 999px;
+
+  --button-radius: 6px;
+  --card-radius: 8px;
+  --avatar-radius: 999px;
+
+  /* Layout */
+  --sidebar-width: 240px;
+  --topbar-height: 48px;
+  --content-width: 1080px;
+  --page-width: 1120px;
+  --measure: 68ch;
+  /* 14px copy runs wide per ch; this keeps it near 70 characters a line */
+  --measure-compact: 58ch;
+
+  /* Transitions */
+  --transition-fast: 120ms ease;
+  --transition-base: 180ms ease;
+  --transition-slow: 240ms ease;
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* Z-index */
+  --z-base: 1;
+  --z-dropdown: 1000;
+  --z-sticky: 1100;
+  --z-overlay: 1200;
+  --z-modal: 1300;
+  --z-toast: 1400;
+}
+
+:root[data-theme='light'] {
+  color-scheme: light;
+
+  --bg-app: #f2f3f5;
+  --bg-base: #ffffff;
+  --bg-surface: #f8f9fa;
+  --bg-surface-2: #eceef0;
+  --bg-surface-3: #e3e5e8;
+  --bg-floating: #ffffff;
+  --bg-overlay: rgba(0, 0, 0, 0.2);
+  --bg-sidebar: #ebedef;
+  --bg-hover: #e3e5e8;
+  --bg-active: #d4d7dc;
+  --bg-disabled: #f2f3f5;
+
+  --font-primary: #060607;
+  --font-secondary: #2e3338;
+  --font-tertiary: #4e5058;
+  --font-muted: #5c5e66;
+  --font-faint: #6d6f78;
+  --font-disabled: #a1a4ab;
+  --font-inverse: #ffffff;
+  --font-link: #0558b8;
+  --font-positive: #137a3f;
+  --font-warning: #8a5a00;
+  --font-danger: #c0262a;
+
+  --accent-primary: #5865f2;
+  --accent-primary-hover: #4752c4;
+  --accent-secondary: #4752c4;
+  --accent-primary-soft: rgba(88, 101, 242, 0.12);
+  --accent-success-soft: rgba(35, 165, 90, 0.12);
+  --accent-warning-soft: rgba(240, 178, 50, 0.18);
+  --accent-danger-soft: rgba(242, 63, 67, 0.1);
+
+  --border-subtle: #e3e5e8;
+  --border-default: #d4d7dc;
+  --border-strong: #b5bac1;
+  --border-bright: #8e9297;
+  --border-focus: #4752c4;
+
+  --button-primary-bg: #4f5bd5;
+  --button-primary-bg-hover: #3c45a5;
+  --button-secondary-bg: #e3e5e8;
+  --button-secondary-bg-hover: #d4d7dc;
+  --button-secondary-text: #2e3338;
+  --button-ghost-bg-hover: #e3e5e8;
+  --button-ghost-text: #2e3338;
+
+  --graph-main: #8e9297;
+  --graph-branch: #5865f2;
+  --graph-node-bg: #ffffff;
+
+  --code-bg: #f2f3f5;
+  --code-text: #2e3338;
+  --code-comment: #5c5e66;
+  --code-keyword: #6231c9;
+  --code-string: #137a3f;
+  --code-function: #0558b8;
+  --code-decorator: #8a5a00;
+  --code-punct: #4e5058;
+
+  --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.06);
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.15);
+
+  --scrollbar-thumb: rgba(0, 0, 0, 0.2);
+  --scrollbar-thumb-hover: rgba(0, 0, 0, 0.35);
+  --selection-bg: rgba(88, 101, 242, 0.25);
+}

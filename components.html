@@ -1,0 +1,886 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Dev Components · Whenes Oliveira</title>
+  <meta name="description" content="Steply design system, portfolio edition: tokens and HTML components for Whenes Oliveira's portfolio.">
+  <script>
+    (function () {
+      var theme;
+      try { theme = localStorage.getItem('theme'); } catch (e) {}
+      if (!theme) theme = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', theme);
+    })();
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Unbounded:wght@500;600;700&display=swap">
+  <link rel="stylesheet" href="assets/css/tokens.css">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/docs.css">
+  <script src="assets/js/i18n.js" defer></script>
+  <script src="assets/js/components.js" defer></script>
+</head>
+<body>
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <symbol id="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></symbol>
+      <symbol id="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></symbol>
+      <symbol id="i-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="8" width="14" height="14" rx="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></symbol>
+      <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></symbol>
+      <symbol id="i-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></symbol>
+      <symbol id="i-download" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></symbol>
+      <symbol id="i-external" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></symbol>
+      <symbol id="i-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 5-5.5 10.2-7.4 11.8a1 1 0 0 1-1.2 0C9.5 20.2 4 15 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></symbol>
+      <symbol id="i-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></symbol>
+      <symbol id="i-repo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/></symbol>
+      <symbol id="i-tag" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12.6 2.6A2 2 0 0 0 11.2 2H4a2 2 0 0 0-2 2v7.2a2 2 0 0 0 .6 1.4l8.7 8.7a2.4 2.4 0 0 0 3.4 0l6.6-6.6a2.4 2.4 0 0 0 0-3.4Z"/><circle cx="7.5" cy="7.5" r="1"/></symbol>
+      <symbol id="i-lock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></symbol>
+      <symbol id="i-info" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></symbol>
+      <symbol id="i-alert" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="m21.7 18-8-14a2 2 0 0 0-3.5 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.7-3"/><path d="M12 9v4M12 17h.01"/></symbol>
+      <symbol id="i-branch" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3v12"/><circle cx="18" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M18 9a9 9 0 0 1-9 9"/></symbol>
+      <symbol id="i-github" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1.1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17 4.9 18 5.2 18 5.2c.7 1.7.3 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3"/></symbol>
+      <symbol id="i-linkedin" viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13Zm1.78 13.02H3.56V9h3.56v11.45ZM22.23 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0h.01Z"/></symbol>
+    </defs>
+  </svg>
+
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="app-topbar">
+    <a class="app-topbar-brand" href="#overview">
+      <span class="app-topbar-mark" aria-hidden="true">WO</span>
+      Whenes Oliveira
+    </a>
+    <span class="app-topbar-path">/ dev-components</span>
+    <div class="app-topbar-actions">
+      <a class="btn btn-ghost btn-icon" href="https://github.com/whenes" aria-label="GitHub profile"><svg class="icon" aria-hidden="true"><use href="#i-github"/></svg></a>
+      <button class="btn btn-ghost btn-icon theme-toggle" type="button" data-theme-toggle aria-label="Switch theme">
+        <svg class="icon icon-moon" aria-hidden="true"><use href="#i-moon"/></svg>
+        <svg class="icon icon-sun" aria-hidden="true"><use href="#i-sun"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <div class="app-shell">
+    <nav class="app-sidebar" aria-label="Components">
+      <div class="app-sidebar-group">
+        <p class="app-sidebar-group-title">Start</p>
+        <ul class="app-sidebar-list">
+          <li><a class="app-sidebar-link" href="#overview">Overview</a></li>
+        </ul>
+      </div>
+      <div class="app-sidebar-group">
+        <p class="app-sidebar-group-title">Foundations</p>
+        <ul class="app-sidebar-list">
+          <li><a class="app-sidebar-link" href="#colors">Color</a></li>
+          <li><a class="app-sidebar-link" href="#typography">Typography</a></li>
+          <li><a class="app-sidebar-link" href="#spacing">Spacing &amp; radius</a></li>
+        </ul>
+      </div>
+      <div class="app-sidebar-group">
+        <p class="app-sidebar-group-title">Primitives</p>
+        <ul class="app-sidebar-list">
+          <li><a class="app-sidebar-link" href="#buttons">Buttons</a></li>
+          <li><a class="app-sidebar-link" href="#labels">Badges, refs, tech</a></li>
+          <li><a class="app-sidebar-link" href="#callouts">Callouts</a></li>
+          <li><a class="app-sidebar-link" href="#toast">Toast</a></li>
+          <li><a class="app-sidebar-link" href="#lang">Language switch</a></li>
+        </ul>
+      </div>
+      <div class="app-sidebar-group">
+        <p class="app-sidebar-group-title">Portfolio</p>
+        <ul class="app-sidebar-list">
+          <li><a class="app-sidebar-link" href="#profile">Profile header</a></li>
+          <li><a class="app-sidebar-link" href="#career">Career log</a></li>
+          <li><a class="app-sidebar-link" href="#migration">Migration case</a></li>
+          <li><a class="app-sidebar-link" href="#repos">Repo cards</a></li>
+          <li><a class="app-sidebar-link" href="#skills">Skill matrix</a></li>
+          <li><a class="app-sidebar-link" href="#code">Code block</a></li>
+          <li><a class="app-sidebar-link" href="#education">Education</a></li>
+          <li><a class="app-sidebar-link" href="#contact">Contact &amp; footer</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <main class="app-content" id="main">
+      <div class="app-content-inner">
+
+        <!-- ============ Overview ============ -->
+        <section id="overview" aria-labelledby="overview-title">
+          <div class="doc-intro">
+            <h1 class="doc-intro-title" id="overview-title">Dev Components</h1>
+            <p class="doc-intro-text">The Steply design system, portfolio edition. Same token names, 4px scale and dark/light switch as Steply, plus the pieces a résumé site needs: a career log drawn as a git graph, a feature-flag migration case, repo cards and code. Every example below is live; open <code>HTML</code> to copy its markup.</p>
+          </div>
+
+          <div class="doc-overview">
+            <div class="profile">
+              <div class="profile-avatar" aria-hidden="true">WO</div>
+              <div>
+                <p class="profile-name">Whenes Oliveira</p>
+                <p class="profile-role">Software Engineer<span class="profile-role-sep" aria-hidden="true">|</span>Full Stack</p>
+                <ul class="profile-meta">
+                  <li><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg>Tubarão, SC, Brazil</li>
+                  <li><span class="status-dot" aria-hidden="true"></span>Software Consultant at SUPERO</li>
+                </ul>
+                <p class="profile-summary"><strong>10+ years</strong> building, modernizing and maintaining enterprise applications: backend services, REST APIs, web and mobile apps, and legacy systems that keep running while they change.</p>
+                <div class="profile-actions">
+                  <a class="btn btn-primary" href="mailto:whenes.oliveira@gmail.com"><svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg>Email me</a>
+                  <a class="btn btn-secondary" aria-disabled="true" title="Resume PDF not published yet"><svg class="icon" aria-hidden="true"><use href="#i-download"/></svg>Resume PDF</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="doc-overview-log">
+              <p class="doc-overview-caption"><svg class="icon" aria-hidden="true"><use href="#i-branch"/></svg>git log --graph --career</p>
+              <ol class="gitlog">
+                <li class="commit" data-branch="tip">
+                  <span class="commit-graph" aria-hidden="true"><i class="lane lane-a"></i><i class="lane lane-b"></i><i class="node node-head" data-lane="b"></i></span>
+                  <div class="commit-body">
+                    <div class="commit-head">
+                      <h3 class="commit-title"><span class="commit-org">SUPERO</span></h3>
+                      <span class="commit-refs"><span class="ref ref-head">HEAD</span></span>
+                      <span class="commit-date">2020-11 → now</span>
+                    </div>
+                  </div>
+                </li>
+                <li class="commit">
+                  <span class="commit-graph" aria-hidden="true"><i class="lane lane-a"></i><i class="lane lane-b"></i><i class="node" data-lane="b"></i></span>
+                  <div class="commit-body">
+                    <div class="commit-head">
+                      <h3 class="commit-title"><span class="commit-org">TOTVS</span></h3>
+                      <span class="commit-date">2023-09 → 2026-08</span>
+                    </div>
+                    <p class="commit-subject">Customer portal: legacy Java EE and modern NestJS side by side, switched by feature flags.</p>
+                  </div>
+                </li>
+                <li class="commit">
+                  <span class="commit-graph" aria-hidden="true"><i class="lane lane-a"></i><i class="lane lane-b"></i><i class="node" data-lane="b"></i></span>
+                  <div class="commit-body">
+                    <div class="commit-head">
+                      <h3 class="commit-title"><span class="commit-org">Selbetti</span></h3>
+                      <span class="commit-date">2022-07 → 2023-08</span>
+                    </div>
+                    <p class="commit-subject">Led a Java 8 → 9 migration; rebuilt a printer UI for hardware Angular couldn't run on.</p>
+                  </div>
+                </li>
+              </ol>
+            </div>
+          </div>
+        </section>
+
+        <!-- ============ Foundations: color ============ -->
+        <section class="doc-section" id="colors" aria-labelledby="colors-title">
+          <header class="section-heading">
+            <h2 class="section-heading-title" id="colors-title">Color</h2>
+            <span class="section-heading-note">Values read live from the active theme</span>
+          </header>
+          <p class="doc-desc">Restrained: Steply's night-console neutrals carry the page, blurple is the one committed accent. Status colors appear only as soft fills with readable text. Switch the theme in the top bar to see the light values.</p>
+          <div class="swatch-groups">
+            <div>
+              <h3 class="swatch-group-title">Surfaces</h3>
+              <ul class="swatches">
+                <li class="swatch" style="--swatch: var(--bg-app)"><div class="swatch-chip"></div><div class="swatch-meta"><span class="swatch-name">--bg-app</span><span class="swatch-value" data-token-value="--bg-app"></span><span class="swatch-role">Page ground</span></div></li>
+                <li class="swatch" style="--swatch: var(--bg-base)"><div class="swatch-chip"></div><div class="swatch-meta"><span class="swatch-name">--bg-base</span><span class="swatch-value" data-token-value="--bg-base"></span><span class="swatch-role">Content area</span></div></li>
+                <li class="swatch" style="--swatch: var(--bg-surface)"><div class="swatch-chip"></div><div class="swatch-meta"><span class="swatch-name">--bg-surface</span><span class="swatch-value" data-token-value="--bg-surface"></span><span class="swatch-role">Cards</span></div></li>
+                <li class="swatch" style="--swatch: var(--bg-sidebar)"><div class="swatch-chip"></div><div class="swatch-meta"><span class="swatch-name">--bg-sidebar</span><span class="swatch-value" data-token-value="--bg-sidebar"></span><span class="swatch-role">Shell chrome</span></div></li>
+                <li class="swatch" style="--swatch: var(--bg-floating)"><div class="swatch-chip"></div><div class="swatch-meta"><span class="swatch-name">--bg-floating</span><span class="swatch-value" data-token-value="--bg-floating"></span><span class="swatch-role">Toasts, menus</span></div></li>
+              </ul>
+            </div>
+            <div>
+              <h3 class="swatch-group-title">Text</h3>
+              <ul class="swatches">
+                <li class="swatch" style="--swatch: var(--font-primary)"><div class="swatch-chip"></div><div class="swatch-meta"><span class="swatch-name">--font-primary</span><span class="swatch-value" data-token-value="--font-primary"></span><span class="swatch-role">Headings, names</span></div></li>
+                <li class="swatch" style="--swatch: var(--font-secondary)"><div class="swatch-chip"></div><div class="swatch-meta"><span class="swatch-name">--font-secondary</span><span class="swatch-value" data-token-value="--font-secondary"></span><span class="swatch-role">Body copy</span></div></li>
+                <li class="swatch" style="--swatch: var(--font-muted)"><div class="swatch-chip"></div><div class="swatch-meta"><span class="swatch-name">--font-muted</span><span class="swatch-value" data-token-value="--font-muted"></span><span class="swatch-role">Meta, dates</span></div></li>
+                <li class="swatch" style="--swatch: var(--font-link)"><div class="swatch-chip"></div><div class="swatch-meta"><span class="swatch-name">--font-link</span><span class="swatch-value" data-token-value="--font-link"></span><span class="swatch-role">Links</span></div></li>
+              </ul>
+            </div>
+            <div>
+              <h3 class="swatch-group-title">Accent &amp; status</h3>
+              <ul class="swatches">
+                <li class="swatch" style="--swatch: var(--accent-primary)"><div class="swatch-chip"></div><div class="swatch-meta"><span class="swatch-name">--accent-primary</span><span class="swatch-value" data-token-value="--accent-primary"></span><span class="swatch-role">Brand, primary action</span></div></li>
+                <li class="swatch" style="--swatch: var(--accent-secondary)"><div class="swatch-chip"></div><div class="swatch-meta"><span class="swatch-name">--accent-secondary</span><span class="swatch-value" data-token-value="--accent-secondary"></span><span class="swatch-role">Accent as text</span></div></li>
+                <li class="swatch" style="--swatch: var(--accent-success)"><div class="swatch-chip"></div><div class="swatch-meta"><span class="swatch-name">--accent-success</span><span class="swatch-value" data-token-value="--accent-success"></span><span class="swatch-role">Current, done</span></div></li>
+                <li class="swatch" style="--swatch: var(--accent-warning)"><div class="swatch-chip"></div><div class="swatch-meta"><span class="swatch-name">--accent-warning</span><span class="swatch-value" data-token-value="--accent-warning"></span><span class="swatch-role">Attention</span></div></li>
+                <li class="swatch" style="--swatch: var(--accent-danger)"><div class="swatch-chip"></div><div class="swatch-meta"><span class="swatch-name">--accent-danger</span><span class="swatch-value" data-token-value="--accent-danger"></span><span class="swatch-role">Errors</span></div></li>
+              </ul>
+            </div>
+            <div>
+              <h3 class="swatch-group-title">Graph &amp; code</h3>
+              <ul class="swatches">
+                <li class="swatch" style="--swatch: var(--graph-main)"><div class="swatch-chip"></div><div class="swatch-meta"><span class="swatch-name">--graph-main</span><span class="swatch-value" data-token-value="--graph-main"></span><span class="swatch-role">Career lane</span></div></li>
+                <li class="swatch" style="--swatch: var(--graph-branch)"><div class="swatch-chip"></div><div class="swatch-meta"><span class="swatch-name">--graph-branch</span><span class="swatch-value" data-token-value="--graph-branch"></span><span class="swatch-role">Consulting lane</span></div></li>
+                <li class="swatch" style="--swatch: var(--code-keyword)"><div class="swatch-chip"></div><div class="swatch-meta"><span class="swatch-name">--code-keyword</span><span class="swatch-value" data-token-value="--code-keyword"></span><span class="swatch-role">Syntax: keyword</span></div></li>
+                <li class="swatch" style="--swatch: var(--code-string)"><div class="swatch-chip"></div><div class="swatch-meta"><span class="swatch-name">--code-string</span><span class="swatch-value" data-token-value="--code-string"></span><span class="swatch-role">Syntax: string</span></div></li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- ============ Foundations: typography ============ -->
+        <section class="doc-section" id="typography" aria-labelledby="typography-title">
+          <header class="section-heading">
+            <h2 class="section-heading-title" id="typography-title">Typography</h2>
+            <span class="section-heading-note">Inter · Unbounded · JetBrains Mono</span>
+          </header>
+          <p class="doc-desc">Inter stays Steply's working face. Unbounded is reserved for short display lines: the name, section titles, the contact line. JetBrains Mono appears only where the content is code, a date range, a ref or a flag key.</p>
+          <ul class="type-specimens">
+            <li class="type-specimen">
+              <span class="type-specimen-meta"><strong>Display</strong>--text-display<br>Unbounded 700</span>
+              <span class="profile-name">Whenes Oliveira</span>
+            </li>
+            <li class="type-specimen">
+              <span class="type-specimen-meta"><strong>Section</strong>--text-display-sm<br>Unbounded 600</span>
+              <span class="section-heading-title">Career log</span>
+            </li>
+            <li class="type-specimen">
+              <span class="type-specimen-meta"><strong>Title</strong>--text-lg<br>Inter 600</span>
+              <span class="flag-case-title">Customer portal modernization</span>
+            </li>
+            <li class="type-specimen">
+              <span class="type-specimen-meta"><strong>Body</strong>--text-md<br>Inter 400 / 1.6</span>
+              <span class="type-body">Implemented and maintained feature-flag-based migration flows, allowing new implementations to be validated before completely switching users to the new backend.</span>
+            </li>
+            <li class="type-specimen">
+              <span class="type-specimen-meta"><strong>UI</strong>--text-sm<br>Inter 500</span>
+              <span class="type-small">Software Consultant at SUPERO</span>
+            </li>
+            <li class="type-specimen">
+              <span class="type-specimen-meta"><strong>Data</strong>--font-mono<br>JetBrains Mono 400</span>
+              <span class="type-mono">2023-09 → 2026-08 · portal.users.modern-backend</span>
+            </li>
+          </ul>
+        </section>
+
+        <!-- ============ Foundations: spacing ============ -->
+        <section class="doc-section" id="spacing" aria-labelledby="spacing-title">
+          <header class="section-heading">
+            <h2 class="section-heading-title" id="spacing-title">Spacing &amp; radius</h2>
+            <span class="section-heading-note">4px scale</span>
+          </header>
+          <p class="doc-desc">Tight inside a group, generous between groups. Sections open with <code>--space-16</code> above and <code>--space-6</code> under the heading rule.</p>
+          <ul class="scale">
+            <li class="scale-row"><span class="scale-name">--space-1</span><span class="scale-px">4</span><span class="scale-bar" style="width: var(--space-1)"></span></li>
+            <li class="scale-row"><span class="scale-name">--space-2</span><span class="scale-px">8</span><span class="scale-bar" style="width: var(--space-2)"></span></li>
+            <li class="scale-row"><span class="scale-name">--space-3</span><span class="scale-px">12</span><span class="scale-bar" style="width: var(--space-3)"></span></li>
+            <li class="scale-row"><span class="scale-name">--space-4</span><span class="scale-px">16</span><span class="scale-bar" style="width: var(--space-4)"></span></li>
+            <li class="scale-row"><span class="scale-name">--space-6</span><span class="scale-px">24</span><span class="scale-bar" style="width: var(--space-6)"></span></li>
+            <li class="scale-row"><span class="scale-name">--space-8</span><span class="scale-px">32</span><span class="scale-bar" style="width: var(--space-8)"></span></li>
+            <li class="scale-row"><span class="scale-name">--space-12</span><span class="scale-px">48</span><span class="scale-bar" style="width: var(--space-12)"></span></li>
+            <li class="scale-row"><span class="scale-name">--space-16</span><span class="scale-px">64</span><span class="scale-bar" style="width: var(--space-16)"></span></li>
+          </ul>
+          <ul class="radii">
+            <li class="radius-item"><span class="radius-box" style="border-radius: var(--radius-sm)"></span><span class="scale-name">--radius-sm</span></li>
+            <li class="radius-item"><span class="radius-box" style="border-radius: var(--radius-md)"></span><span class="scale-name">--radius-md</span></li>
+            <li class="radius-item"><span class="radius-box" style="border-radius: var(--radius-lg)"></span><span class="scale-name">--radius-lg</span></li>
+            <li class="radius-item"><span class="radius-box" style="border-radius: var(--radius-xl)"></span><span class="scale-name">--radius-xl</span></li>
+            <li class="radius-item"><span class="radius-box" style="border-radius: var(--radius-pill)"></span><span class="scale-name">--radius-pill</span></li>
+          </ul>
+        </section>
+
+        <!-- ============ Buttons ============ -->
+        <section class="doc-section" id="buttons" aria-labelledby="buttons-title">
+          <header class="section-heading">
+            <h2 class="section-heading-title" id="buttons-title">Buttons</h2>
+            <span class="section-heading-note">.btn + variant</span>
+          </header>
+          <p class="doc-desc">One primary action per view. Links styled as buttons keep <code>&lt;a&gt;</code>; icon-only buttons always carry <code>aria-label</code>.</p>
+          <div class="preview" id="demo-buttons">
+            <div class="preview-stack">
+              <div class="preview-row">
+                <span class="preview-label">variants</span>
+                <a class="btn btn-primary" href="mailto:whenes.oliveira@gmail.com"><svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg>Email me</a>
+                <a class="btn btn-secondary" aria-disabled="true" title="Resume PDF not published yet"><svg class="icon" aria-hidden="true"><use href="#i-download"/></svg>Resume PDF</a>
+                <a class="btn btn-outline" href="https://github.com/whenes"><svg class="icon" aria-hidden="true"><use href="#i-github"/></svg>GitHub</a>
+                <button class="btn btn-ghost" type="button">Ghost</button>
+              </div>
+              <div class="preview-row">
+                <span class="preview-label">icon · sizes</span>
+                <a class="btn btn-outline btn-icon" href="https://www.linkedin.com/in/whenes-oliveira-b9baa7189" aria-label="LinkedIn profile"><svg class="icon" aria-hidden="true"><use href="#i-linkedin"/></svg></a>
+                <button class="btn btn-ghost btn-icon" type="button" data-copy="whenes.oliveira@gmail.com" data-copy-message="Email copied" aria-label="Copy email address"><svg class="icon" aria-hidden="true"><use href="#i-copy"/></svg></button>
+                <button class="btn btn-primary btn-sm" type="button">Small</button>
+                <button class="btn btn-primary btn-lg" type="button">Large</button>
+                <button class="btn btn-secondary" type="button" disabled>Disabled</button>
+              </div>
+            </div>
+          </div>
+          <details class="snippet"><summary><svg class="icon" aria-hidden="true"><use href="#i-chevron"/></svg>HTML</summary><pre><code data-snippet-for="demo-buttons"></code></pre></details>
+        </section>
+
+        <!-- ============ Labels ============ -->
+        <section class="doc-section" id="labels" aria-labelledby="labels-title">
+          <header class="section-heading">
+            <h2 class="section-heading-title" id="labels-title">Badges, refs, tech</h2>
+            <span class="section-heading-note">.badge · .ref · .tech</span>
+          </header>
+          <p class="doc-desc">Badges state a status. Refs name git pointers in the career log. Tech chips list a stack; they never get color per technology.</p>
+          <div class="preview" id="demo-labels">
+            <div class="preview-stack">
+              <div class="preview-row">
+                <span class="preview-label">.badge</span>
+                <span class="badge badge-info">Illustrative</span>
+                <span class="badge badge-success">Current</span>
+                <span class="badge badge-warning">Pending</span>
+                <span class="badge badge-danger">Deprecated</span>
+                <span class="badge badge-neutral"><svg class="icon" aria-hidden="true" style="width:12px;height:12px"><use href="#i-lock"/></svg>Private source</span>
+                <span class="badge badge-solid">v0.1.0</span>
+              </div>
+              <div class="preview-row">
+                <span class="preview-label">.ref</span>
+                <span class="ref ref-head">HEAD</span>
+                <span class="ref ref-branch">consulting</span>
+                <span class="ref">java-8 → 9</span>
+              </div>
+              <div class="preview-row">
+                <span class="preview-label">.tech</span>
+                <ul class="tech-list">
+                  <li class="tech">Java</li>
+                  <li class="tech">Spring Boot</li>
+                  <li class="tech">NestJS</li>
+                  <li class="tech">Angular</li>
+                  <li class="tech">Apache Kafka</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <details class="snippet"><summary><svg class="icon" aria-hidden="true"><use href="#i-chevron"/></svg>HTML</summary><pre><code data-snippet-for="demo-labels"></code></pre></details>
+        </section>
+
+        <!-- ============ Callouts ============ -->
+        <section class="doc-section" id="callouts" aria-labelledby="callouts-title">
+          <header class="section-heading">
+            <h2 class="section-heading-title" id="callouts-title">Callouts</h2>
+            <span class="section-heading-note">.callout + variant</span>
+          </header>
+          <p class="doc-desc">Steply's alert, redrawn with a tinted field and a hairline border instead of a heavy side stripe.</p>
+          <div class="preview" id="demo-callouts">
+            <div class="preview-stack">
+              <p class="callout callout-info"><svg class="icon" aria-hidden="true"><use href="#i-info"/></svg><span><strong>Illustrative example.</strong> Flag keys and code on this page show the pattern, not proprietary client code.</span></p>
+              <p class="callout callout-warning"><svg class="icon" aria-hidden="true"><use href="#i-alert"/></svg><span><strong>Resume PDF not published.</strong> Resume buttons stay disabled until <code class="mono">assets/whenes-oliveira-resume.pdf</code> exists. The source résumé has a phone number the site leaves out: export a public copy without it.</span></p>
+              <p class="callout callout-success"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span><strong>Delivered.</strong> Application running on the target Java version.</span></p>
+              <p class="callout callout-danger"><svg class="icon" aria-hidden="true"><use href="#i-alert"/></svg><span><strong>Download failed.</strong> The release asset was not found. Try the releases page instead.</span></p>
+            </div>
+          </div>
+          <details class="snippet"><summary><svg class="icon" aria-hidden="true"><use href="#i-chevron"/></svg>HTML</summary><pre><code data-snippet-for="demo-callouts"></code></pre></details>
+        </section>
+
+        <!-- ============ Toast ============ -->
+        <section class="doc-section" id="toast" aria-labelledby="toast-title">
+          <header class="section-heading">
+            <h2 class="section-heading-title" id="toast-title">Toast</h2>
+            <span class="section-heading-note">JS: showToast(message)</span>
+          </header>
+          <p class="doc-desc">Confirms a silent action, like copying an email. Any element with <code>data-copy</code> or <code>data-copy-from</code> copies and raises one bottom-right.</p>
+          <div class="preview" id="demo-toast">
+            <div class="preview-row">
+              <div class="toast toast-static"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span class="toast-text">Email copied</span></div>
+              <button class="btn btn-secondary" type="button" data-copy="whenes.oliveira@gmail.com" data-copy-message="Email copied"><svg class="icon" aria-hidden="true"><use href="#i-copy"/></svg>Copy email</button>
+            </div>
+          </div>
+          <details class="snippet"><summary><svg class="icon" aria-hidden="true"><use href="#i-chevron"/></svg>HTML</summary><pre><code data-snippet-for="demo-toast"></code></pre></details>
+        </section>
+
+        <!-- ============ Language switch ============ -->
+        <section class="doc-section" id="lang" aria-labelledby="lang-title">
+          <header class="section-heading">
+            <h2 class="section-heading-title" id="lang-title">Language switch</h2>
+            <span class="section-heading-note">.lang-switch</span>
+          </header>
+          <p class="doc-desc">One static page per language, linked to each other. The current language carries <code>aria-current="true"</code>; each link names its language with <code>hreflang</code>, <code>lang</code> and an <code>aria-label</code> in that language. Following a link keeps a deep link such as <code>#job-totvs</code>. Scripts read their interface strings from <code>i18n.js</code> by <code>&lt;html lang&gt;</code>.</p>
+          <div class="preview" id="demo-lang">
+            <nav class="lang-switch" aria-label="Language">
+              <a href="en/index.html" hreflang="en" lang="en" aria-label="English">EN</a>
+              <a href="index.html" hreflang="pt-BR" lang="pt-BR" aria-label="Português (Brasil)" aria-current="true">PT</a>
+            </nav>
+          </div>
+          <details class="snippet"><summary><svg class="icon" aria-hidden="true"><use href="#i-chevron"/></svg>HTML</summary><pre><code data-snippet-for="demo-lang"></code></pre></details>
+        </section>
+
+        <!-- ============ Profile ============ -->
+        <section class="doc-section" id="profile" aria-labelledby="profile-title">
+          <header class="section-heading">
+            <h2 class="section-heading-title" id="profile-title">Profile header</h2>
+            <span class="section-heading-note">.profile</span>
+          </header>
+          <p class="doc-desc">The first viewport of the portfolio. Name in Unbounded, role as on the résumé, current position with a live dot, one summary sentence, then the contact actions. Use <code>&lt;h1 class="profile-name"&gt;</code> on the real page.</p>
+          <div class="preview" id="demo-profile">
+            <header class="profile">
+              <div class="profile-avatar" aria-hidden="true">WO</div>
+              <div>
+                <h3 class="profile-name">Whenes Oliveira</h3>
+                <p class="profile-role">Software Engineer<span class="profile-role-sep" aria-hidden="true">|</span>Full Stack</p>
+                <ul class="profile-meta">
+                  <li><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg>Tubarão, SC, Brazil</li>
+                  <li><span class="status-dot" aria-hidden="true"></span>Software Consultant at SUPERO</li>
+                </ul>
+                <p class="profile-summary"><strong>10+ years</strong> building, modernizing and maintaining enterprise applications: backend services, REST APIs, web and mobile apps, system integrations, and legacy systems evolved without losing reliability or testability.</p>
+                <div class="profile-actions">
+                  <a class="btn btn-primary" href="mailto:whenes.oliveira@gmail.com"><svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg>Email me</a>
+                  <a class="btn btn-secondary" aria-disabled="true" title="Resume PDF not published yet"><svg class="icon" aria-hidden="true"><use href="#i-download"/></svg>Resume PDF</a>
+                  <span class="profile-actions-divider" aria-hidden="true"></span>
+                  <a class="btn btn-ghost btn-icon" href="https://github.com/whenes" aria-label="GitHub profile"><svg class="icon" aria-hidden="true"><use href="#i-github"/></svg></a>
+                  <a class="btn btn-ghost btn-icon" href="https://www.linkedin.com/in/whenes-oliveira-b9baa7189" aria-label="LinkedIn profile"><svg class="icon" aria-hidden="true"><use href="#i-linkedin"/></svg></a>
+                  <button class="btn btn-ghost btn-icon" type="button" data-copy="whenes.oliveira@gmail.com" data-copy-message="Email copied" aria-label="Copy email address"><svg class="icon" aria-hidden="true"><use href="#i-copy"/></svg></button>
+                </div>
+              </div>
+            </header>
+          </div>
+          <details class="snippet"><summary><svg class="icon" aria-hidden="true"><use href="#i-chevron"/></svg>HTML</summary><pre><code data-snippet-for="demo-profile"></code></pre></details>
+        </section>
+
+        <!-- ============ Career log ============ -->
+        <section class="doc-section" id="career" aria-labelledby="career-title">
+          <header class="section-heading">
+            <h2 class="section-heading-title" id="career-title">Career log</h2>
+            <span class="section-heading-note">.gitlog · newest first</span>
+          </header>
+          <p class="doc-desc">Experience as version history. The gray lane is the career line; the blurple lane is the SUPERO consulting branch, with each client placement as a commit on it. <code>data-branch="tip"</code> starts a lane at its node, <code>"start"</code> ends it and draws the curve back to the career line, <code>data-root</code> ends the career line. Details use native <code>&lt;details&gt;</code>, so they work without JavaScript.</p>
+          <div class="preview" id="demo-career">
+            <ol class="gitlog">
+              <li class="commit" data-branch="tip">
+                <span class="commit-graph" aria-hidden="true"><i class="lane lane-a"></i><i class="lane lane-b"></i><i class="node node-head" data-lane="b"></i></span>
+                <div class="commit-body">
+                  <div class="commit-head">
+                    <h3 class="commit-title"><span class="commit-org">SUPERO</span> <span class="commit-role">Software Consultant</span></h3>
+                    <span class="commit-refs"><span class="ref ref-head">HEAD</span><span class="ref ref-branch">consulting</span></span>
+                    <span class="commit-date">Nov 2020 → Present</span>
+                  </div>
+                  <p class="commit-subject">Software consulting across enterprise projects and clients: backend, frontend, mobile, system integrations, legacy modernization, troubleshooting and maintenance.</p>
+                </div>
+              </li>
+
+              <li class="commit">
+                <span class="commit-graph" aria-hidden="true"><i class="lane lane-a"></i><i class="lane lane-b"></i><i class="node" data-lane="b"></i></span>
+                <div class="commit-body">
+                  <div class="commit-head">
+                    <h3 class="commit-title"><span class="commit-org">TOTVS</span> <span class="commit-role">Software Consultant</span></h3>
+                    <span class="commit-date">Sep 2023 → Aug 2026</span>
+                  </div>
+                  <p class="commit-subject">Enterprise customer portal for employees of TOTVS customers: new features and incremental migration of legacy functionality to modern implementations.</p>
+                  <details class="commit-details">
+                    <summary><svg class="icon" aria-hidden="true"><use href="#i-chevron"/></svg><span class="commit-details-label-closed">Show 7 changes</span><span class="commit-details-label-open">Hide changes</span></summary>
+                    <ul class="commit-points">
+                      <li>Contributed to the gradual modernization of a system where legacy Java EE, EJB and Node.js applications coexisted with newer Spring Boot and NestJS services.</li>
+                      <li>Implemented and maintained feature-flag-based migration flows so new implementations were validated before switching users to the new backend.</li>
+                      <li>Built REST APIs and integrations with Fluig, Zendesk and TOTVS Centralized Base.</li>
+                      <li>Applied the Adapter Pattern, Dependency Inversion and Dependency Injection to reduce coupling and make automated testing easier.</li>
+                      <li>Created custom annotations that encapsulate Swagger configuration in NestJS, keeping controllers clean.</li>
+                      <li>Unit tests with JUnit and Jest against a 60% minimum coverage target; configured Kafka message keys where event ordering had to hold.</li>
+                      <li>AI-assisted workflow with Spec Kit, Claude and GitHub Copilot: reviewing, validating, correcting and testing generated code.</li>
+                    </ul>
+                    <ul class="tech-list">
+                      <li class="tech">Java</li><li class="tech">Spring Boot</li><li class="tech">Node.js</li><li class="tech">NestJS</li><li class="tech">Angular</li><li class="tech">TypeScript</li><li class="tech">Apache Kafka</li><li class="tech">JUnit</li><li class="tech">Jest</li>
+                    </ul>
+                  </details>
+                </div>
+              </li>
+
+              <li class="commit">
+                <span class="commit-graph" aria-hidden="true"><i class="lane lane-a"></i><i class="lane lane-b"></i><i class="node" data-lane="b"></i></span>
+                <div class="commit-body">
+                  <div class="commit-head">
+                    <h3 class="commit-title"><span class="commit-org">Selbetti</span> <span class="commit-role">Software Consultant</span></h3>
+                    <span class="commit-date">Jul 2022 → Aug 2023</span>
+                  </div>
+                  <p class="commit-subject">Technical support, mobile and embedded application teams: reproduction, debugging and root-cause analysis on complex issues.</p>
+                  <details class="commit-details">
+                    <summary><svg class="icon" aria-hidden="true"><use href="#i-chevron"/></svg><span class="commit-details-label-closed">Show 4 changes</span><span class="commit-details-label-open">Hide changes</span></summary>
+                    <ul class="commit-points">
+                      <li>Fixed an issue involving the Caixa Econômica Federal bank slip check-digit algorithm by analyzing the full processing flow, finding the incorrect implementation and validating it against the official documentation.</li>
+                      <li>Built a native Android app in Kotlin with an end-to-end printer-list flow through a Java and Spring Boot API.</li>
+                      <li>Rebuilt a Ricoh printer frontend in HTML, CSS2, legacy JavaScript, jQuery and AJAX when the Angular solution could not run in the printer's environment.</li>
+                      <li>Led the technical execution of a Java 8 → Java 9 migration, delivering the application working on the target version.</li>
+                    </ul>
+                    <ul class="tech-list">
+                      <li class="tech">Java</li><li class="tech">Spring Boot</li><li class="tech">Kotlin</li><li class="tech">Android</li><li class="tech">jQuery</li><li class="tech">Angular</li>
+                    </ul>
+                  </details>
+                </div>
+              </li>
+
+              <li class="commit">
+                <span class="commit-graph" aria-hidden="true"><i class="lane lane-a"></i><i class="lane lane-b"></i><i class="node" data-lane="b"></i></span>
+                <div class="commit-body">
+                  <div class="commit-head">
+                    <h3 class="commit-title"><span class="commit-org">Portonave</span> <span class="commit-role">Software Consultant</span></h3>
+                    <span class="commit-date">Oct 2021 → Jun 2022</span>
+                  </div>
+                  <p class="commit-subject">Software for port operations across desktop, web, mobile and integrated systems.</p>
+                  <details class="commit-details">
+                    <summary><svg class="icon" aria-hidden="true"><use href="#i-chevron"/></svg><span class="commit-details-label-closed">Show 4 changes</span><span class="commit-details-label-open">Hide changes</span></summary>
+                    <ul class="commit-points">
+                      <li>REST APIs in Java and Spring Boot; desktop applications in Eclipse RCP, SWT and Swing.</li>
+                      <li>Native Android apps in Java and web interfaces in React.</li>
+                      <li>State persistence that let interrupted multi-step processes resume from the exact step where they stopped.</li>
+                      <li>Investigated numerical precision and value representation issues in application flows.</li>
+                    </ul>
+                    <ul class="tech-list">
+                      <li class="tech">Java</li><li class="tech">Spring Boot</li><li class="tech">Eclipse RCP</li><li class="tech">Android</li><li class="tech">React</li>
+                    </ul>
+                  </details>
+                </div>
+              </li>
+
+              <li class="commit" data-branch="start">
+                <span class="commit-graph" aria-hidden="true"><i class="lane lane-a"></i><i class="lane lane-b"></i><i class="branch-curve"></i><i class="node" data-lane="b"></i></span>
+                <div class="commit-body">
+                  <div class="commit-head">
+                    <h3 class="commit-title"><span class="commit-org">Philips</span> <span class="commit-role">Software Consultant</span></h3>
+                    <span class="commit-date">Nov 2020 → Oct 2021</span>
+                  </div>
+                  <p class="commit-subject">Tasy healthcare management system: new functionality and maintenance of existing modules.</p>
+                  <details class="commit-details">
+                    <summary><svg class="icon" aria-hidden="true"><use href="#i-chevron"/></svg><span class="commit-details-label-closed">Show 4 changes</span><span class="commit-details-label-open">Hide changes</span></summary>
+                    <ul class="commit-points">
+                      <li>Extensive Oracle PL/SQL: procedures, functions, views, triggers and complex queries, with business rules implemented in the database per the product architecture.</li>
+                      <li>Participated in developing a hospital accreditation workflow for hospitals serving Unimed customers.</li>
+                      <li>Technical reference for code quality, helping developers apply SRP, Fail Fast, SOLID and duplication removal.</li>
+                      <li>Worked across multiple product versions: branches, merge conflicts and pull requests for each applicable version.</li>
+                    </ul>
+                    <ul class="tech-list">
+                      <li class="tech">Java</li><li class="tech">Node.js</li><li class="tech">Angular</li><li class="tech">TypeScript</li><li class="tech">Oracle</li><li class="tech">PL/SQL</li>
+                    </ul>
+                  </details>
+                </div>
+              </li>
+
+              <li class="commit">
+                <span class="commit-graph" aria-hidden="true"><i class="lane lane-a"></i><i class="node" data-lane="a"></i></span>
+                <div class="commit-body">
+                  <div class="commit-head">
+                    <h3 class="commit-title"><span class="commit-org">PostoAki</span> <span class="commit-role">Software Developer</span></h3>
+                    <span class="commit-date">Oct 2019 → Jan 2021</span>
+                  </div>
+                  <p class="commit-subject">Loyalty platform for gas station networks: discount coupons, point-of-sale integrations, web and mobile apps.</p>
+                  <details class="commit-details">
+                    <summary><svg class="icon" aria-hidden="true"><use href="#i-chevron"/></svg><span class="commit-details-label-closed">Show 5 changes</span><span class="commit-details-label-open">Hide changes</span></summary>
+                    <ul class="commit-points">
+                      <li>White-label, multitenant application serving different gas station networks.</li>
+                      <li>Shell scripts automating per-client customization: texts, links, settings, icons, images and visual identity.</li>
+                      <li>Automated preparation, configuration, build and publishing of the Android and iOS apps.</li>
+                      <li>UX decisions such as surfacing the discount coupon on app open and easier navigation through long station lists.</li>
+                      <li>Trained a junior developer on the team's activities and processes.</li>
+                    </ul>
+                    <ul class="tech-list">
+                      <li class="tech">Java</li><li class="tech">Spring Boot</li><li class="tech">Angular</li><li class="tech">Ionic</li><li class="tech">Shell</li>
+                    </ul>
+                  </details>
+                </div>
+              </li>
+
+              <li class="commit">
+                <span class="commit-graph" aria-hidden="true"><i class="lane lane-a"></i><i class="node" data-lane="a"></i></span>
+                <div class="commit-body">
+                  <div class="commit-head">
+                    <h3 class="commit-title"><span class="commit-org">Ateky</span> <span class="commit-role">Technical Support</span></h3>
+                    <span class="commit-date">Jun 2018 → Aug 2018</span>
+                  </div>
+                  <p class="commit-subject">Remote support for internet service provider customers, diagnosing slow or unstable connections from network configuration, signal and routes.</p>
+                </div>
+              </li>
+
+              <li class="commit">
+                <span class="commit-graph" aria-hidden="true"><i class="lane lane-a"></i><i class="node" data-lane="a"></i></span>
+                <div class="commit-body">
+                  <div class="commit-head">
+                    <h3 class="commit-title"><span class="commit-org">SENAI</span> <span class="commit-role">Software Developer</span></h3>
+                    <span class="commit-date">Mar 2015 → Nov 2015</span>
+                  </div>
+                  <p class="commit-subject">Web-based school management system used by SENAI units.</p>
+                  <details class="commit-details">
+                    <summary><svg class="icon" aria-hidden="true"><use href="#i-chevron"/></svg><span class="commit-details-label-closed">Show 3 changes</span><span class="commit-details-label-open">Hide changes</span></summary>
+                    <ul class="commit-points">
+                      <li>Features in Java Web, Java EE, JSF, JSP, RichFaces and Hibernate; custom reports in SQL and PostgreSQL.</li>
+                      <li>Corrected data inconsistencies so school processes were not blocked.</li>
+                      <li>JUnit tests for new functionality, updated whenever business rules changed.</li>
+                    </ul>
+                    <ul class="tech-list">
+                      <li class="tech">Java EE</li><li class="tech">JSF</li><li class="tech">RichFaces</li><li class="tech">Hibernate</li><li class="tech">PostgreSQL</li><li class="tech">JUnit</li>
+                    </ul>
+                  </details>
+                </div>
+              </li>
+
+              <li class="commit">
+                <span class="commit-graph" aria-hidden="true"><i class="lane lane-a"></i><i class="node" data-lane="a"></i></span>
+                <div class="commit-body">
+                  <div class="commit-head">
+                    <h3 class="commit-title"><span class="commit-org">Evoluma</span> <span class="commit-role">Software Developer Intern</span></h3>
+                    <span class="commit-date">Jul 2013 → Dec 2013</span>
+                  </div>
+                  <p class="commit-subject">PHP vehicle tracking application: registration features, reports, PostgreSQL queries and a PDF user manual.</p>
+                </div>
+              </li>
+
+              <li class="commit">
+                <span class="commit-graph" aria-hidden="true"><i class="lane lane-a"></i><i class="node" data-lane="a"></i></span>
+                <div class="commit-body">
+                  <div class="commit-head">
+                    <h3 class="commit-title"><span class="commit-org">IT Projects Lab, UNISUL</span> <span class="commit-role">Software Development Intern</span></h3>
+                    <span class="commit-date">Mar 2011 → Dec 2011</span>
+                  </div>
+                  <p class="commit-subject">Desktop app for medication inventory and appointment scheduling, delivered to Abrigo dos Velhinhos de Tubarão and, per the supervising professor, still in use about five years later.</p>
+                  <details class="commit-details">
+                    <summary><svg class="icon" aria-hidden="true"><use href="#i-chevron"/></svg><span class="commit-details-label-closed">Show 3 changes</span><span class="commit-details-label-open">Hide changes</span></summary>
+                    <ul class="commit-points">
+                      <li>Java 6, SWT, GWT, JDBC and MySQL in an MVC structure, with hand-written SQL through JDBC.</li>
+                      <li>Singleton-based guard preventing multiple application instances from opening at once.</li>
+                      <li>Visual indicators for low medication stock and overdue appointments.</li>
+                    </ul>
+                  </details>
+                </div>
+              </li>
+
+              <li class="commit" data-root>
+                <span class="commit-graph" aria-hidden="true"><i class="lane lane-a"></i><i class="node" data-lane="a"></i></span>
+                <div class="commit-body">
+                  <div class="commit-head">
+                    <h3 class="commit-title"><span class="commit-org">Library Lab, UNISUL</span> <span class="commit-role">IT Support Intern</span></h3>
+                    <span class="commit-refs"><span class="ref">root</span></span>
+                    <span class="commit-date">Mar 2010 → Dec 2010</span>
+                  </div>
+                  <p class="commit-subject">Support for a computer lab of about 15 workstations: Wi-Fi, IP addressing and driver issues.</p>
+                </div>
+              </li>
+            </ol>
+          </div>
+          <details class="snippet"><summary><svg class="icon" aria-hidden="true"><use href="#i-chevron"/></svg>HTML</summary><pre><code data-snippet-for="demo-career"></code></pre></details>
+        </section>
+
+        <!-- ============ Migration case ============ -->
+        <section class="doc-section" id="migration" aria-labelledby="migration-title">
+          <header class="section-heading">
+            <h2 class="section-heading-title" id="migration-title">Migration case</h2>
+            <span class="section-heading-note">.flag-case · role="switch"</span>
+          </header>
+          <p class="doc-desc">A case study the reader operates. Flip the flag and the request path moves from the legacy services to the modern ones, the way the TOTVS portal validated new implementations before switching users. Add <code>data-flag-case</code>; both states' switch label and status line live in the markup (<code>data-flag-state="off|on"</code>), so each language page carries its own copy; the script only toggles them.</p>
+          <div class="preview" id="demo-migration">
+            <article class="card flag-case" data-flag-case>
+              <header class="flag-case-header">
+                <div>
+                  <h3 class="flag-case-title">Customer portal modernization</h3>
+                  <p class="flag-case-org">TOTVS · via SUPERO · 2023 – 2026</p>
+                </div>
+                <button class="flag-switch" type="button" role="switch" aria-checked="false" aria-label="Feature flag portal.users.modern-backend">
+                  <span class="flag-switch-track" aria-hidden="true"></span>
+                  <span class="flag-switch-text">
+                    <span class="flag-switch-key">portal.users.modern-backend</span>
+                    <span class="flag-switch-state" data-flag-state="off">off · legacy backend</span>
+                    <span class="flag-switch-state" data-flag-state="on" hidden>on · modern backend</span>
+                  </span>
+                </button>
+              </header>
+              <div class="flag-path">
+                <div class="flag-node is-active">
+                  <span class="flag-node-name">Customer portal <span class="ref">client</span></span>
+                  <ul class="tech-list"><li class="tech">Angular</li><li class="tech">TypeScript</li></ul>
+                </div>
+                <svg class="flag-edges" viewBox="0 0 72 100" preserveAspectRatio="none" aria-hidden="true">
+                  <path class="flag-edge" data-flag-target="legacy" d="M0 50 C 40 50, 32 25, 72 25" vector-effect="non-scaling-stroke"/>
+                  <path class="flag-edge" data-flag-target="modern" d="M0 50 C 40 50, 32 75, 72 75" vector-effect="non-scaling-stroke"/>
+                </svg>
+                <div class="flag-targets">
+                  <div class="flag-node" data-flag-target="legacy">
+                    <span class="flag-node-name">Legacy services <span class="ref">flag off</span></span>
+                    <ul class="tech-list"><li class="tech">Java EE</li><li class="tech">EJB</li><li class="tech">Node.js</li></ul>
+                  </div>
+                  <div class="flag-node" data-flag-target="modern">
+                    <span class="flag-node-name">Modern services <span class="ref ref-branch">flag on</span></span>
+                    <ul class="tech-list"><li class="tech">Spring Boot</li><li class="tech">NestJS</li></ul>
+                  </div>
+                </div>
+              </div>
+              <footer class="flag-case-footer">
+                <div aria-live="polite">
+                  <p class="flag-status" data-flag-state="off"><strong>Legacy path.</strong> Requests go to the Java EE / EJB services users already depend on.</p>
+                  <p class="flag-status" data-flag-state="on" hidden><strong>Modern path.</strong> The new Spring Boot / NestJS implementation serves users under the flag, validated before the full switch.</p>
+                </div>
+                <ul class="flag-integrations">
+                  <li>Integrations</li>
+                  <li class="tech">Fluig</li><li class="tech">Zendesk</li><li class="tech">TOTVS Centralized Base</li><li class="tech">Apache Kafka</li>
+                </ul>
+                <p class="flag-note">Flag key and diagram are illustrative; the migration pattern is from the engagement.</p>
+              </footer>
+            </article>
+          </div>
+          <details class="snippet"><summary><svg class="icon" aria-hidden="true"><use href="#i-chevron"/></svg>HTML</summary><pre><code data-snippet-for="demo-migration"></code></pre></details>
+        </section>
+
+        <!-- ============ Repo cards ============ -->
+        <section class="doc-section" id="repos" aria-labelledby="repos-title">
+          <header class="section-heading">
+            <h2 class="section-heading-title" id="repos-title">Repo cards</h2>
+            <span class="section-heading-note">.repo-card · .repo-card-featured</span>
+          </header>
+          <p class="doc-desc">Shipped work gets the featured card spanning the row; study repositories sit below it. Language dots use GitHub's linguist colors through <code>--lang</code>.</p>
+          <div class="preview" id="demo-repos">
+            <div class="repo-grid">
+              <article class="card repo-card repo-card-featured">
+                <div class="repo-head">
+                  <svg class="icon" aria-hidden="true"><use href="#i-repo"/></svg>
+                  <h3 class="repo-name"><a href="https://github.com/whenes/placar-basquete-releases"><span class="repo-owner">whenes/</span>placar-basquete-releases</a></h3>
+                  <span class="badge badge-neutral"><svg class="icon" aria-hidden="true" style="width:12px;height:12px"><use href="#i-lock"/></svg>Source private</span>
+                </div>
+                <p class="repo-desc">Placar Basquete, a FIBA electronic basketball scoreboard for Windows. Every <span class="mono">vX.Y.Z</span> tag builds in GitHub Actions and publishes the installer to a public releases repository, keeping the five most recent versions.</p>
+                <ul class="repo-meta">
+                  <li><svg class="icon" aria-hidden="true"><use href="#i-tag"/></svg>v0.1.0</li>
+                  <li>Released Sep 15, 2026</li>
+                  <li><a href="https://github.com/whenes/placar-basquete-releases/releases/latest">Download installer</a><svg class="icon" aria-hidden="true" style="width:12px;height:12px"><use href="#i-external"/></svg></li>
+                </ul>
+              </article>
+              <article class="card repo-card">
+                <div class="repo-head">
+                  <svg class="icon" aria-hidden="true"><use href="#i-repo"/></svg>
+                  <h3 class="repo-name"><a href="https://github.com/whenes/arquitetura-hexagonal-fc3"><span class="repo-owner">whenes/</span>arquitetura-hexagonal-fc3</a></h3>
+                </div>
+                <p class="repo-desc">Hexagonal architecture studies from the Full Cycle course.</p>
+                <ul class="repo-meta"><li><span class="lang-dot" style="--lang:#00add8" aria-hidden="true"></span>Go</li></ul>
+              </article>
+              <article class="card repo-card">
+                <div class="repo-head">
+                  <svg class="icon" aria-hidden="true"><use href="#i-repo"/></svg>
+                  <h3 class="repo-name"><a href="https://github.com/whenes/arquitetura-monolito-fc3"><span class="repo-owner">whenes/</span>arquitetura-monolito-fc3</a></h3>
+                </div>
+                <p class="repo-desc">Modular monolith architecture exercises from the Full Cycle course.</p>
+                <ul class="repo-meta"><li><span class="lang-dot" style="--lang:#3178c6" aria-hidden="true"></span>TypeScript</li></ul>
+              </article>
+              <article class="card repo-card">
+                <div class="repo-head">
+                  <svg class="icon" aria-hidden="true"><use href="#i-repo"/></svg>
+                  <h3 class="repo-name"><a href="https://github.com/whenes/alura-ddd"><span class="repo-owner">whenes/</span>alura-ddd</a></h3>
+                </div>
+                <p class="repo-desc">Domain-Driven Design course exercises from Alura.</p>
+                <ul class="repo-meta"><li><span class="lang-dot" style="--lang:#b07219" aria-hidden="true"></span>Java</li></ul>
+              </article>
+            </div>
+          </div>
+          <details class="snippet"><summary><svg class="icon" aria-hidden="true"><use href="#i-chevron"/></svg>HTML</summary><pre><code data-snippet-for="demo-repos"></code></pre></details>
+        </section>
+
+        <!-- ============ Skills ============ -->
+        <section class="doc-section" id="skills" aria-labelledby="skills-title">
+          <header class="section-heading">
+            <h2 class="section-heading-title" id="skills-title">Skill matrix</h2>
+            <span class="section-heading-note">&lt;dl class="skill-matrix"&gt;</span>
+          </header>
+          <p class="doc-desc">Core skills exactly as grouped on the résumé. No bars, no percentages: the career log is where depth is proven.</p>
+          <div class="preview" id="demo-skills">
+            <dl class="skill-matrix">
+              <div class="skill-row"><dt>Backend</dt><dd><ul class="tech-list"><li class="tech">Java</li><li class="tech">Spring Boot</li><li class="tech">Java EE</li><li class="tech">Node.js</li><li class="tech">NestJS</li><li class="tech">TypeScript</li><li class="tech">REST APIs</li><li class="tech">JPA</li><li class="tech">Hibernate</li><li class="tech">EJB</li></ul></dd></div>
+              <div class="skill-row"><dt>Frontend</dt><dd><ul class="tech-list"><li class="tech">Angular</li><li class="tech">React</li><li class="tech">JavaScript</li><li class="tech">HTML5</li><li class="tech">CSS3</li><li class="tech">Ionic</li><li class="tech">JSF</li></ul></dd></div>
+              <div class="skill-row"><dt>Engineering</dt><dd><ul class="tech-list"><li class="tech">Layered Architecture</li><li class="tech">MVC</li><li class="tech">OOP</li><li class="tech">Clean Code</li><li class="tech">SOLID</li><li class="tech">Design Patterns</li><li class="tech">Dependency Injection</li></ul></dd></div>
+              <div class="skill-row"><dt>Testing</dt><dd><ul class="tech-list"><li class="tech">JUnit</li><li class="tech">Jest</li><li class="tech">Mocha/Chai</li><li class="tech">Vitest</li><li class="tech">Cypress</li><li class="tech">Playwright</li><li class="tech">Supertest</li></ul></dd></div>
+              <div class="skill-row"><dt>Databases</dt><dd><ul class="tech-list"><li class="tech">Oracle</li><li class="tech">PostgreSQL</li><li class="tech">SQL Server</li><li class="tech">SQL</li><li class="tech">PL/SQL</li></ul></dd></div>
+              <div class="skill-row"><dt>Messaging</dt><dd><ul class="tech-list"><li class="tech">REST</li><li class="tech">RabbitMQ</li><li class="tech">Apache Kafka</li></ul></dd></div>
+              <div class="skill-row"><dt>Tools &amp; agile</dt><dd><ul class="tech-list"><li class="tech">Git</li><li class="tech">GitHub</li><li class="tech">Azure DevOps</li><li class="tech">Jenkins</li><li class="tech">Jira</li><li class="tech">Scrum</li><li class="tech">Kanban</li><li class="tech">XP</li></ul></dd></div>
+              <div class="skill-row"><dt>AI-assisted</dt><dd><ul class="tech-list"><li class="tech">Spec Kit</li><li class="tech">Claude</li><li class="tech">GitHub Copilot</li></ul></dd></div>
+            </dl>
+          </div>
+          <details class="snippet"><summary><svg class="icon" aria-hidden="true"><use href="#i-chevron"/></svg>HTML</summary><pre><code data-snippet-for="demo-skills"></code></pre></details>
+        </section>
+
+        <!-- ============ Code block ============ -->
+        <section class="doc-section" id="code" aria-labelledby="code-title">
+          <header class="section-heading">
+            <h2 class="section-heading-title" id="code-title">Code block</h2>
+            <span class="section-heading-note">.code-block · .tok-*</span>
+          </header>
+          <p class="doc-desc">For showing a pattern in the owner's own words. Highlighting is hand-marked with six token classes, so there is no highlighter to load. Mark anything reconstructed as <span class="badge badge-info">Illustrative</span>.</p>
+          <div class="preview" id="demo-code">
+            <figure class="code-block">
+              <figcaption class="code-block-bar">
+                <span class="code-block-file">api-docs.decorator.ts</span>
+                <span class="badge badge-info">Illustrative</span>
+                <button class="btn btn-ghost btn-icon btn-sm" type="button" data-copy-from="#code-apidocs" data-copy-message="Code copied" aria-label="Copy code"><svg class="icon" aria-hidden="true"><use href="#i-copy"/></svg></button>
+              </figcaption>
+<pre><code id="code-apidocs"><span class="tok-k">import</span> <span class="tok-p">{</span> applyDecorators<span class="tok-p">,</span> Type <span class="tok-p">}</span> <span class="tok-k">from</span> <span class="tok-s">'@nestjs/common'</span><span class="tok-p">;</span>
+<span class="tok-k">import</span> <span class="tok-p">{</span> ApiBearerAuth<span class="tok-p">,</span> ApiOkResponse<span class="tok-p">,</span> ApiOperation<span class="tok-p">,</span> ApiTags <span class="tok-p">}</span> <span class="tok-k">from</span> <span class="tok-s">'@nestjs/swagger'</span><span class="tok-p">;</span>
+
+<span class="tok-c">// One annotation instead of four stacked Swagger decorators per endpoint.</span>
+<span class="tok-k">export function</span> <span class="tok-f">ApiDocs</span><span class="tok-p">(</span>tag<span class="tok-p">:</span> <span class="tok-k">string</span><span class="tok-p">,</span> summary<span class="tok-p">:</span> <span class="tok-k">string</span><span class="tok-p">,</span> response<span class="tok-p">:</span> Type<span class="tok-p">&lt;</span><span class="tok-k">unknown</span><span class="tok-p">&gt;)</span> <span class="tok-p">{</span>
+  <span class="tok-k">return</span> <span class="tok-f">applyDecorators</span><span class="tok-p">(</span>
+    <span class="tok-f">ApiTags</span><span class="tok-p">(</span>tag<span class="tok-p">),</span>
+    <span class="tok-f">ApiBearerAuth</span><span class="tok-p">(),</span>
+    <span class="tok-f">ApiOperation</span><span class="tok-p">({</span> summary <span class="tok-p">}),</span>
+    <span class="tok-f">ApiOkResponse</span><span class="tok-p">({</span> type<span class="tok-p">:</span> response <span class="tok-p">}),</span>
+  <span class="tok-p">);</span>
+<span class="tok-p">}</span>
+
+<span class="tok-c">// users.controller.ts</span>
+<span class="tok-d">@Get</span><span class="tok-p">(</span><span class="tok-s">':id'</span><span class="tok-p">)</span>
+<span class="tok-d">@ApiDocs</span><span class="tok-p">(</span><span class="tok-s">'users'</span><span class="tok-p">,</span> <span class="tok-s">'Find user by id'</span><span class="tok-p">,</span> UserResponseDto<span class="tok-p">)</span>
+<span class="tok-f">findOne</span><span class="tok-p">(</span><span class="tok-d">@Param</span><span class="tok-p">(</span><span class="tok-s">'id'</span><span class="tok-p">)</span> id<span class="tok-p">:</span> <span class="tok-k">string</span><span class="tok-p">)</span> <span class="tok-p">{</span>
+  <span class="tok-k">return this</span><span class="tok-p">.</span>users<span class="tok-p">.</span><span class="tok-f">findOne</span><span class="tok-p">(</span>id<span class="tok-p">);</span>
+<span class="tok-p">}</span></code></pre>
+            </figure>
+          </div>
+        </section>
+
+        <!-- ============ Education ============ -->
+        <section class="doc-section" id="education" aria-labelledby="education-title">
+          <header class="section-heading">
+            <h2 class="section-heading-title" id="education-title">Education</h2>
+            <span class="section-heading-note">.entry</span>
+          </header>
+          <p class="doc-desc">A plain entry: title, dates or status on the right, detail below. Stated as the résumé states it.</p>
+          <div class="preview" id="demo-education">
+            <div class="entry">
+              <h3 class="entry-title">Universidade do Sul de Santa Catarina · UNISUL</h3>
+              <span class="badge badge-neutral">Incomplete</span>
+              <p class="entry-sub">Computer Science</p>
+            </div>
+          </div>
+          <details class="snippet"><summary><svg class="icon" aria-hidden="true"><use href="#i-chevron"/></svg>HTML</summary><pre><code data-snippet-for="demo-education"></code></pre></details>
+        </section>
+
+        <!-- ============ Contact ============ -->
+        <section class="doc-section" id="contact" aria-labelledby="contact-title">
+          <header class="section-heading">
+            <h2 class="section-heading-title" id="contact-title">Contact &amp; footer</h2>
+            <span class="section-heading-note">.contact · .site-footer</span>
+          </header>
+          <p class="doc-desc">The page's close: the one place the accent fills a whole block. All four routes live here: email (written out and copyable, since mailto does nothing without a mail client), LinkedIn, GitHub and the résumé.</p>
+          <div class="preview" id="demo-contact">
+            <div class="preview-stack">
+              <aside class="contact">
+                <div>
+                  <h3 class="contact-title">Have a system that can't stop while it changes?</h3>
+                  <p class="contact-text">Gradual modernization with legacy and new services side by side, feature-flag migration flows, and the technical execution of a Java 8 → 9 migration. Pick the channel you prefer.</p>
+                  <p class="contact-email">
+                    <span id="contact-address">whenes.oliveira@gmail.com</span>
+                    <button class="btn btn-on-accent-ghost btn-icon btn-sm" type="button" data-copy-from="#contact-address" data-copy-message="Email copied" aria-label="Copy email address"><svg class="icon" aria-hidden="true"><use href="#i-copy"/></svg></button>
+                  </p>
+                </div>
+                <div class="contact-actions">
+                  <a class="btn btn-on-accent btn-lg" href="mailto:whenes.oliveira@gmail.com"><svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg>Email me</a>
+                  <a class="btn btn-on-accent-outline btn-lg" href="https://www.linkedin.com/in/whenes-oliveira-b9baa7189"><svg class="icon" aria-hidden="true"><use href="#i-linkedin"/></svg>LinkedIn</a>
+                  <a class="btn btn-on-accent-outline btn-lg" href="https://github.com/whenes"><svg class="icon" aria-hidden="true"><use href="#i-github"/></svg>GitHub</a>
+                  <a class="btn btn-on-accent-outline btn-lg" aria-disabled="true" title="Resume PDF not published yet"><svg class="icon" aria-hidden="true"><use href="#i-download"/></svg>Resume</a>
+                </div>
+              </aside>
+              <footer class="site-footer">
+                <span>© 2026 Whenes Oliveira · Built on the Steply design system</span>
+                <nav aria-label="Elsewhere">
+                  <a href="https://github.com/whenes">GitHub</a>
+                  <a href="https://www.linkedin.com/in/whenes-oliveira-b9baa7189">LinkedIn</a>
+                  <a href="mailto:whenes.oliveira@gmail.com">Email</a>
+                </nav>
+              </footer>
+            </div>
+          </div>
+          <details class="snippet"><summary><svg class="icon" aria-hidden="true"><use href="#i-chevron"/></svg>HTML</summary><pre><code data-snippet-for="demo-contact"></code></pre></details>
+        </section>
+
+        <footer class="site-footer" style="margin-top: var(--space-16)">
+          <span>Dev Components · tokens.css · base.css · components.css · components.js</span>
+          <nav aria-label="Source">
+            <a href="https://github.com/whenes/github-pages-resume">Repository</a>
+          </nav>
+        </footer>
+      </div>
+    </main>
+  </div>
+</body>
+</html>
