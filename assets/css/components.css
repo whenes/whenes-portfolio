@@ -584,6 +584,8 @@
 .repo-name a { color: var(--font-link); }
 .repo-owner { color: var(--font-muted); }
 .repo-head .badge { margin-left: auto; }
+.repo-head .badge + .badge { margin-left: 0; }
+.repo-card .commit-points { margin: 0; }
 .repo-desc {
   flex: 1;
   max-width: var(--measure);
