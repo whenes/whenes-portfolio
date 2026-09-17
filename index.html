@@ -61,7 +61,7 @@
     <nav aria-label="Seções">
       <ul class="app-topbar-nav">
         <li><a href="#career">Carreira</a></li>
-        <li><a href="#case">Caso</a></li>
+        <li><a href="#cases">Estudos de caso</a></li>
         <li><a href="#projects">Projetos</a></li>
         <li><a href="#skills">Habilidades</a></li>
         <li><a href="#contact">Contato</a></li>
@@ -330,18 +330,19 @@
       </ol>
     </section>
 
-    <!-- ============ Case ============ -->
-    <section class="page-section" id="case" aria-labelledby="case-title">
+    <!-- ============ Case studies ============ -->
+    <section class="page-section" id="cases" aria-labelledby="cases-title">
       <header class="section-heading">
-        <h2 class="section-heading-title" id="case-title">Modernizar sem parar</h2>
-        <span class="section-heading-note">TOTVS · 2023 – 2026</span>
+        <h2 class="section-heading-title" id="cases-title">Estudos de caso</h2>
+        <span class="section-heading-note">Problemas reais, do contexto à solução</span>
       </header>
-      <p class="page-lede">No portal de clientes da TOTVS, aplicações legadas em Java EE, EJB e Node.js coexistiam com serviços mais novos em Spring Boot e NestJS enquanto as funcionalidades eram migradas aos poucos. As novas implementações ficavam atrás de feature flags e eram validadas antes de os usuários passarem para o novo backend. Ligue a flag para acompanhar uma requisição, ou <a href="#log-totvs">abra o commit da TOTVS</a> no gráfico da carreira.</p>
+      <p class="page-lede">Casos que ajudei a solucionar nas empresas e projetos em que atuei. O primeiro é interativo: ligue a flag para acompanhar uma requisição.</p>
       <article class="card flag-case" data-flag-case>
         <header class="flag-case-header">
           <div>
-            <h3 class="flag-case-title">Modernização do portal de clientes</h3>
+            <h3 class="flag-case-title">Modernização incremental do portal de clientes</h3>
             <p class="flag-case-org">TOTVS · via SUPERO · 2023 – 2026</p>
+            <p class="flag-case-desc">Aplicações legadas em Java EE, EJB e Node.js coexistiam com serviços mais novos em Spring Boot e NestJS enquanto as funcionalidades eram migradas aos poucos. As novas implementações ficavam atrás de feature flags e eram validadas antes de os usuários passarem para o novo backend. <a href="#log-totvs">Ver o commit da TOTVS</a> no gráfico da carreira.</p>
           </div>
           <button class="flag-switch" type="button" role="switch" aria-checked="false" aria-label="Feature flag portal.users.modern-backend">
             <span class="flag-switch-track" aria-hidden="true"></span>
@@ -384,6 +385,70 @@
           <p class="flag-note">A chave da flag e o diagrama são ilustrativos; o padrão de migração vem do projeto.</p>
         </footer>
       </article>
+      <div class="case-grid">
+        <article class="card case-card" id="case-ricoh">
+          <header class="case-head">
+            <h3 class="case-title">Frontend embarcado em impressoras Ricoh</h3>
+            <p class="case-meta"><span class="ref">Selbetti</span><span class="case-date">2022 – 2023</span></p>
+          </header>
+          <dl class="case-body">
+            <div><dt>Contexto</dt><dd>Solução para impressoras Ricoh atendida pelo time de aplicações embarcadas, com frontend original em Angular.</dd></div>
+            <div><dt>Desafio</dt><dd>A versão em Angular não rodava dentro das restrições do ambiente legado da impressora.</dd></div>
+            <div><dt>Abordagem</dt><dd>Recriei o frontend em HTML, CSS2, JavaScript legado, jQuery e AJAX, e participei das decisões técnicas para adaptar a solução às restrições de hardware e aos prazos de entrega.</dd></div>
+          </dl>
+          <ul class="tech-list"><li class="tech">HTML</li><li class="tech">CSS2</li><li class="tech">JavaScript</li><li class="tech">jQuery</li><li class="tech">AJAX</li></ul>
+        </article>
+        <article class="card case-card" id="case-boleto">
+          <header class="case-head">
+            <h3 class="case-title">Dígito verificador de boletos da Caixa</h3>
+            <p class="case-meta"><span class="ref">Selbetti</span><span class="case-date">2022 – 2023</span></p>
+          </header>
+          <dl class="case-body">
+            <div><dt>Contexto</dt><dd>Investigação de problemas complexos de software por reprodução, depuração e análise de causa raiz.</dd></div>
+            <div><dt>Desafio</dt><dd>Um problema envolvendo o algoritmo de dígito verificador dos boletos da Caixa Econômica Federal.</dd></div>
+            <div><dt>Abordagem</dt><dd>Analisei o fluxo completo de processamento, identifiquei a implementação incorreta e validei contra a documentação oficial do algoritmo.</dd></div>
+            <div class="case-outcome"><dt>Resultado</dt><dd>Problema corrigido na implementação do algoritmo.</dd></div>
+          </dl>
+        </article>
+        <article class="card case-card" id="case-java-9">
+          <header class="case-head">
+            <h3 class="case-title">Migração de Java 8 para Java 9</h3>
+            <p class="case-meta"><span class="ref">Selbetti</span><span class="case-date">2022 – 2023</span></p>
+          </header>
+          <dl class="case-body">
+            <div><dt>Contexto</dt><dd>Aplicação Java que precisava sair do Java 8 para o Java 9.</dd></div>
+            <div><dt>Desafio</dt><dd>Problemas de compatibilidade entre as versões.</dd></div>
+            <div><dt>Abordagem</dt><dd>Liderei a execução técnica da migração, analisando os problemas de compatibilidade.</dd></div>
+            <div class="case-outcome"><dt>Resultado</dt><dd>Aplicação entregue funcionando na versão alvo. A experiência depois apoiou as discussões da migração de Java 8 para Java 17 na TOTVS.</dd></div>
+          </dl>
+          <ul class="tech-list"><li class="tech">Java 8</li><li class="tech">Java 9</li></ul>
+        </article>
+        <article class="card case-card" id="case-white-label">
+          <header class="case-head">
+            <h3 class="case-title">Personalização automatizada de app white-label</h3>
+            <p class="case-meta"><span class="ref">PostoAki</span><span class="case-date">2019 – 2021</span></p>
+          </header>
+          <dl class="case-body">
+            <div><dt>Contexto</dt><dd>Plataforma de fidelidade white-label e multitenant, com um app atendendo diferentes redes de postos de combustível.</dd></div>
+            <div><dt>Desafio</dt><dd>Cada rede precisava de textos, links, configurações, ícones, imagens e identidade visual próprios.</dd></div>
+            <div><dt>Abordagem</dt><dd>Criei shell scripts que automatizam a personalização por cliente e automatizei a preparação, configuração, build e publicação dos apps Android e iOS.</dd></div>
+          </dl>
+          <ul class="tech-list"><li class="tech">Ionic</li><li class="tech">Angular</li><li class="tech">Shell</li><li class="tech">Android</li><li class="tech">iOS</li></ul>
+        </article>
+        <article class="card case-card" id="case-estoque">
+          <header class="case-head">
+            <h3 class="case-title">Controle de estoque de medicamentos</h3>
+            <p class="case-meta"><span class="ref">UNISUL</span><span class="case-date">2011</span></p>
+          </header>
+          <dl class="case-body">
+            <div><dt>Contexto</dt><dd>Projeto do Laboratório de Projetos de TI da UNISUL para o Abrigo dos Velhinhos de Tubarão.</dd></div>
+            <div><dt>Desafio</dt><dd>Controlar o estoque de medicamentos e o agendamento de consultas da instituição.</dd></div>
+            <div><dt>Abordagem</dt><dd>Aplicação desktop em MVC com acesso ao banco via JDBC e SQL escrito à mão, indicadores visuais de estoque baixo e consultas atrasadas, e bloqueio de múltiplas instâncias com Singleton. Participei da instalação e da entrega.</dd></div>
+            <div class="case-outcome"><dt>Resultado</dt><dd>Segundo relato posterior do professor orientador, a aplicação ainda estava em uso cerca de cinco anos depois da entrega.</dd></div>
+          </dl>
+          <ul class="tech-list"><li class="tech">Java 6</li><li class="tech">SWT</li><li class="tech">GWT</li><li class="tech">JDBC</li><li class="tech">MySQL</li></ul>
+        </article>
+      </div>
     </section>
 
     <!-- ============ Projects ============ -->
